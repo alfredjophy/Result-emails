@@ -56,3 +56,28 @@ def get_results_from_db():
     results = cur.fetchall()
     return results
 
+def add_uuid_link_to_db(records,resultName):
+    for i in records : 
+        cur.execute('insert into result_links values(unhex(replace(uuid(),\'-\',\'\')),\'{0}\',\'{1}\')'.format(resultName,i['SI_No']))
+    cur.execute('update results set emailSent = true where name like \'{0}\''.format(resultName))        
+    db.commit()
+    cur.execute('select hex(id) as id,SI_No from result_links where name like \'{0}\''.format(resultName))
+    hexids=cur.fetchall()
+    linkIDs={}
+    for i in hexids:
+        linkIDs[i['SI_No']] = i['id']
+    return linkIDs
+
+def get_data_from_linkID(linkID):
+    cur.execute('select * from result_links where hex(id) like \'{0}\''.format(linkID))
+    linkData = cur.fetchall()[0]
+    cur.execute('select * from {0} where SI_No like \'{1}\''.format(linkData['name'],linkData['SI_No']))
+    record = cur.fetchall()[0]
+    print(record)
+    if not record['emailRead']:
+        cur.execute('update {0} set emailRead = true where SI_No like \'{1}\''.format(linkData['name'],record['SI_No']))
+        db.commit()
+    return record 
+        
+    
+
