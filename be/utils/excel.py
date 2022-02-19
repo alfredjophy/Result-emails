@@ -16,5 +16,7 @@ def getRecords(sheet):
     results=results_sheet.to_dict(orient="records")
     return results
 
-
-
+def saveFile(sheet,filePath):
+    results_sheet=pd.read_excel(sheet)
+    results_sheet.to_excel(filePath)
+    return True

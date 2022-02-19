@@ -5,7 +5,7 @@ import pathlib
 
 from db_functions import add_result_to_db,get_result_from_db,get_results_from_db,add_uuid_link_to_db,get_data_from_linkID
 
-from utils.excel import verifySheet,getRecords
+from utils.excel import verifySheet,getRecords,saveFile
 from utils.generateFileName import generateFileName
 from utils.email import send_email
 
@@ -30,8 +30,7 @@ def upload_sheet() :
         return jsonify({"error" : sheetStatus[2]}),sheetStatus[1]
 
     fileName = generateFileName(metadata)
-    file.save(FILE_STORAGE_PATH/'{0}'.format(fileName))
-
+    saveFile(file,FILE_STORAGE_PATH/'{0}.xlsx'.format(fileName))
     add_result_to_db(fileName,getRecords(file))
     return jsonify({'resultName' : fileName}),200
 
