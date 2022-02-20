@@ -23,12 +23,14 @@ def app_status() :
 @app.route('/upload_sheet',methods=['POST'])
 def upload_sheet() : 
     metadata=request.form
+    print(metadata)
     file=request.files['file']
 
     sheetStatus=verifySheet(file)
     if not sheetStatus[0] : 
         return jsonify({"error" : sheetStatus[2]}),sheetStatus[1]
-
+    
+    print('error')
     fileName = generateFileName(metadata)
     saveFile(file,FILE_STORAGE_PATH/'{0}.xlsx'.format(fileName))
     add_result_to_db(fileName,getRecords(file))
