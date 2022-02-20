@@ -19,3 +19,15 @@ export async function uploadFile(formData) {
     const data = await response.json();
     return data;
 }
+
+export async function sendMail(rname) {
+    const response = await fetch(
+        `http://localhost:5050/results/${rname}/sendmail`,
+        {
+            method: "POST",
+            body: { send: true },
+        }
+    );
+    const data = await response.json();
+    return data;
+}

@@ -2,15 +2,21 @@ import smtplib
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from time import sleep
+
+import multiprocessing as mp
 
 CREDENTIALS = {"email" : 'alfredjophy129@gmail.com',"password" : 'wxtfhaqjaxhmgxml'};
 
-s = smtplib.SMTP('smtp.gmail.com', 587)
 
-
-def send_email(subject,records,linkIDs):
+def _send_email(subject,records,linkIDs):
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.ehlo()
     s.starttls()
+    s.ehlo()
     s.login(CREDENTIALS['email'],CREDENTIALS['password'])
+    sleep(0.25)
+    # detach the loop
     for i in records: 
         email = '''
         <html><head></head>
@@ -26,7 +32,12 @@ def send_email(subject,records,linkIDs):
         msg['To'] = i['Email']
         msg.attach(MIMEText(email,'html'))
         s.sendmail(CREDENTIALS['email'],i['Email'],msg.as_string())
-
+        sleep(0.25)
     s.quit()
+
+def send_email(s,r,l):
+    p = mp.Process(target=_send_email,args=(s,r,l))
+    p.start()
+
 
 

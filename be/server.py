@@ -46,7 +46,7 @@ def get_results() :
     results = get_results_from_db()
     return jsonify(results),200
 
-@app.route('/results/<resultName>/sendmail',methods=['GET'])
+@app.route('/results/<resultName>/sendmail',methods=['POST'])
 def sendmail(resultName):
     result = get_result_from_db(resultName)
     if not result[0] :
@@ -55,7 +55,7 @@ def sendmail(resultName):
         return jsonify({'error':'email already sent'}),415
     records = result[1]['records']
     linkIDs = add_uuid_link_to_db(records,resultName)
-    send_email('FUCCCCKKK',records,linkIDs) 
+    send_email('this is threaded',records,linkIDs) 
     return jsonify({'status' : 'Emails sent successfully'}),200
 
 @app.route('/results/student/<linkID>',methods=['GET'])

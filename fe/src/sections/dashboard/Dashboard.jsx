@@ -8,9 +8,12 @@ const Dashboard = () => {
     return (
         <div>
             <h1>Results</h1>
+            <h2>Exam Name, Email Sent status</h2>
             {data.map((result) => (
                 <Link key={result.name} to={`/results/${result.name}`}>
-                    {result.name},{result.emailSent}
+                    <p>
+                        {result.name},{result.emailSent ? "yes" : "no"}
+                    </p>
                 </Link>
             ))}
         </div>

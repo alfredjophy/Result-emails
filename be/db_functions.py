@@ -56,7 +56,7 @@ def get_result_from_db(name):
 
 def get_results_from_db():
     db,cur = connect()
-    cur.execute('select name,uploadDate,emailSent from results order by uploadDate')
+    cur.execute('select name,uploadDate,emailSent from results order by uploadDate desc')
     results = cur.fetchall()
     db.close()
     return results
