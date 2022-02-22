@@ -13,11 +13,23 @@ def connect():
     cur = db.cursor()
     return db,cur
 
-
-def add_result_to_db(name,records) : 
+def add_result(name,records,dname,course,semester) : 
     db,cur = connect()
-    # fix CURDATE()
-    cur.execute('insert into results(name,uploadDate,emailSent) values(\'{0}\',CURDATE(),false)'.format(name))
+
+    cur.execute('select * from results where name like \'{0}\''.format(name))
+    if cur.fetchall() != () : 
+        return False
+
+    cur.execute('select * from departments where depname like \'{0}\''.format(dname))
+    depID = cur.fetchall()[0]['id']
+    print(depID)
+    cur.execute('select * from courses_info where course like \'{0}\''.format(course))
+    courseID = cur.fetchall()[0]['id']
+    print(courseID)
+    
+    # see if already exists
+    cur.execute('insert into results(name,uploadDate,emailSent,depID,courseID,semester) values(\'{0}\',CURDATE(),false,{1},{2},{3})'.format(name,depID,courseID,semester))
+        
     # this works 
     subjects=list(filter(lambda x: x not in ['SI No','Name','Email'],(records[0].keys())))
     cur.execute('update results set subjects = \'{0}\' where Name = \'{1}\''.format(reduce(lambda str,subject :'{0},{1}'.format(str,subject.strip()),subjects),name))
@@ -31,16 +43,15 @@ def add_result_to_db(name,records) :
         for j in subjects:
             mark = str(i[j])
             if mark == 'nan':
-                print('YES')
                 values+=',NULL'
             else:
-                values+=','+mark
-        cur.execute('insert into {0} values({1},false)'.format(name,values))
-    db.commit()
-    db.close()
+                values+=','+mark 
+        cur.execute('insert into {0} values({1},false)'.format(name,values)) 
+    db.commit() 
+    db.close() 
     return True
 
-def get_result_from_db(name):
+def get_result(name):
     db,cur = connect()
     # fix the LIKE 
     cur.execute('select * from results where name like \'{0}\''.format(name))
@@ -54,14 +65,14 @@ def get_result_from_db(name):
     return [True,{'resultInfo' : {'emailSent' : resultInfo[0]['emailSent'],
         'uploadDate' : resultInfo[0]['uploadDate'],'subjects' : subjects },'records':records}]
 
-def get_results_from_db():
+def get_results():
     db,cur = connect()
     cur.execute('select name,uploadDate,emailSent from results order by uploadDate desc')
     results = cur.fetchall()
     db.close()
     return results
 
-def add_uuid_link_to_db(records,resultName):
+def add_uuid_link(records,resultName):
     db,cur = connect()
     for i in records : 
         cur.execute('insert into result_links values(unhex(replace(uuid(),\'-\',\'\')),\'{0}\',\'{1}\')'.format(resultName,i['SI_No']))
@@ -88,4 +99,18 @@ def get_data_from_linkID(linkID):
     db.close()
     return record 
 
+def get_departments():
+    db,cur = connect()
+    cur.execute('select * from departments order by depname')
+    result= cur.fetchall()
+    db.close()
+    departments = list(map(lambda x: dict({'name' :x['depname'],'courses':x['courses'].split(',')} ),result))
+    print(departments)
+    return departments
 
+def get_courses():
+    db,cur = connect()
+    cur.execute('select * from courses_info')
+    result=cur.fetchall()     
+    db.close()
+    return result
