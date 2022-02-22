@@ -3,7 +3,7 @@ import {
     useCoursesQuery,
     useUploadQuery,
 } from "../../queries";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UploadFile = () => {
@@ -23,7 +23,10 @@ const UploadFile = () => {
 
     if (departments.isLoading || courses.isLoading) return <h2>Loading</h2>;
     if (departments.isSuccess && courses.isSuccess && semesters === null) {
-        setSemesters(courses.data[0].semesters);
+        const i = courses.data.findIndex(
+            (c, i) => c.course == departments.data[curDep].courses[0]
+        );
+        setSemesters(courses.data[i].semesters);
     }
 
     return (
