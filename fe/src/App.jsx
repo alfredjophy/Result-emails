@@ -13,7 +13,8 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/results/:dname" element={<Department />} />
+                <Route path="/departments/:dname" element={<Department />} />
+                <Route path="/results/:rname" element={<Results />} />
                 <Route path="/uploadfile" element={<UploadFile />} />
             </Routes>
         </div>

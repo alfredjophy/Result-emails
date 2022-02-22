@@ -1,27 +1,30 @@
-import { uploadFile } from "../../api";
-import { useMutation, useQuery } from "react-query";
-import { getDepartments, getCourses } from "../../api";
+import {
+    useDepartmentsQuery,
+    useCoursesQuery,
+    useUploadQuery,
+} from "../../queries";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UploadFile = () => {
-    const departments = useQuery("departments", getDepartments);
-    const courses = useQuery("courses", getCourses);
-
+    const departments = useDepartmentsQuery();
+    const courses = useCoursesQuery();
     const [curDep, setcurDep] = useState(0);
-    const [semesters, setSemesters] = useState(1);
-
-    const mutate = useMutation((data) => uploadFile(data));
-    if (mutate.isError) {
-        console.log(mutate.error);
-    }
+    const [semesters, setSemesters] = useState(null);
+    const navigate = useNavigate();
+    const uploadFile = useUploadQuery();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
-        mutate.mutate(data);
+        uploadFile.mutate(data);
+        e.reset();
     };
 
     if (departments.isLoading || courses.isLoading) return <h2>Loading</h2>;
+    if (departments.isSuccess && courses.isSuccess && semesters === null) {
+        setSemesters(courses.data[0].semesters);
+    }
 
     return (
         <div>
