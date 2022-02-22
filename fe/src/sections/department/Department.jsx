@@ -3,11 +3,24 @@ import {
     useDepartmentsQuery,
     useDepartmentResultsQuery,
     useCoursesQuery,
+    useResultStatsQuery,
 } from "../../queries";
 import { Link } from "react-router-dom";
 
 const ResultPreview = (props) => {
-    return <Link to={`/results/${props.rname}`}>{props.rname}</Link>;
+    const stats = useResultStatsQuery(props.rname);
+    if (stats.isLoading) return <h2>Loading</h2>;
+
+    return (
+        <div>
+            <Link to={`/results/${props.rname}`}>{props.rname}</Link>
+            {stats.data.emailSent && (
+                <h4>
+                    Read Status : {(stats.data.readRatio * 100).toFixed(2)}%{" "}
+                </h4>
+            )}
+        </div>
+    );
 };
 
 const Department = () => {
@@ -26,6 +39,7 @@ const Department = () => {
         (dep) => dep.name === dname
     )[0]["courses"];
 
+    // this will look better once the design is done
     return (
         <div>
             {getDepartmentCourses.map((course) => (
