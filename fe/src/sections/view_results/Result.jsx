@@ -4,13 +4,12 @@ import { useState, useEffect } from "react";
 
 const Results = () => {
     let { rname } = useParams();
-    const results = useResultQuery(rname);
-    const sendEmail = useSendMailQuery(rname);
     const [sendButton, setButton] = useState(true);
-    useEffect(() => {
-        while (results.isLoading);
-        setButton(!results.data.resultInfo.emailSent);
-    }, []);
+
+    const results = useResultQuery(rname, {
+        onSuccess: (data) => setButton(!data.resultInfo.emailSent),
+    });
+    const sendEmail = useSendMailQuery(rname);
 
     if (results.isLoading || sendEmail.isLoading) return <h3>Loading</h3>;
 
@@ -26,20 +25,29 @@ const Results = () => {
                     Send Email
                 </button>
             )}
-            <div>
-                SI_No Name Email
-                {results.data.resultInfo.subjects.map((s) => s + " ")}
-                EmailRead
-            </div>
-            {results.data.records.map((e) => (
-                <p key={e.SI_No}>
-                    {e.SI_No} {e.Name} {e.Email}{" "}
-                    {results.data.resultInfo.subjects.map(
-                        (s) => e[s.replace(" ", "_")] + " "
-                    )}
-                    {e.emailRead ? "Seen" : "Not seen"}
-                </p>
-            ))}
+            <table>
+                <tr>
+                    <th>SI No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    {results.data.resultInfo.subjects.map((s) => (
+                        <th>{s}</th>
+                    ))}
+                    <th>EmailRead</th>
+                </tr>
+
+                {results.data.records.map((e) => (
+                    <tr key={e.SI_No}>
+                        <td>{e.SI_No}</td>
+                        <td>{e.Name}</td>
+                        <td>{e.Email}</td>
+                        {results.data.resultInfo.subjects.map((s) => (
+                            <td>{e[s.replace(" ", "_")]}</td>
+                        ))}
+                        <td>{e.emailRead ? "Seen" : "Not seen"}</td>
+                    </tr>
+                ))}
+            </table>
         </div>
     );
 };

@@ -66,8 +66,12 @@ async function getDepartmentResults(dname) {
     return data;
 }
 
-export const useDepartmentResultsQuery = (dname) =>
-    useQuery(`departmentResults-${dname}`, () => getDepartmentResults(dname));
+export const useDepartmentResultsQuery = (dname, opts) =>
+    useQuery(
+        `departmentResults-${dname}`,
+        () => getDepartmentResults(dname),
+        opts
+    );
 
 async function getResultStats(rname) {
     const response = await fetch(`${BASE_URL}/results/${rname}/email/stats`);
