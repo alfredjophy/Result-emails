@@ -8,6 +8,8 @@ from utils.excel import verifySheet,getRecords,saveFile
 from utils.generateFileName import generateFileName
 from utils.email import send_email
 
+from functools import reduce
+
 app = Flask(__name__)
 
 FILE_STORAGE_PATH = pathlib.Path.home()/'files'
@@ -35,29 +37,44 @@ def upload_sheet() :
         return jsonify({'error':'file already exists'}),415
     return jsonify({'resultName' : fileName}),200
 
-@app.route('/api/get_result/<resultName>',methods=['GET'])
-def get_result(resultName) : 
-    result = db.get_result(resultName)
-    if not result[0] :
-        return jsonify({"error" : "result not found"}),404
-    return jsonify(result[1]),200
+@app.route('/api/departments/<dname>/results',methods=['GET'])
+def get_result(dname) :
+    if not db.in_department(dname) :
+        return jsonify({"error" : "department not found"}),404
+    result = db.get_department_results(dname)
+    return jsonify(result),200
 
-@app.route('/api/get_results',methods=['GET'])
-def get_results() : 
-    results = db.get_results()
-    return jsonify(results),200
+@app.route('/api/results/<rname>')
+def getResult(rname):
+    result=db.get_result(rname)
+    if not result :
+        return jsonify({'error':'result not found'}),404
+    return jsonify(result),200
 
-@app.route('/api/results/<resultName>/sendmail',methods=['POST'])
+@app.route('/api/results/<resultName>/emails/send',methods=['POST'])
 def sendmail(resultName):
     result = db.get_result(resultName)
-    if not result[0] :
+    if not result :
         return jsonify({"error" : "result not found"}),404
-    elif result[1]['resultInfo']['emailSent']:
+    elif result['resultInfo']['emailSent']:
         return jsonify({'error':'email already sent'}),415
-    records = result[1]['records']
+    records = result['records']
     linkIDs = db.add_uuid_link(records,resultName)
     send_email('this is threaded',records,linkIDs) 
     return jsonify({'status' : 'Emails sent successfully'}),200
+
+@app.route('/api/results/<resultName>/email/stats')
+def getResultEmailReadStats(resultName):
+    result = db.get_result(resultName)
+    if not result :
+        return jsonify({"error" : "result not found"}),404
+    elif not result['resultInfo']['emailSent']:
+        return jsonify({'emailSent':False}),200
+    records = result['records']
+    readCount=reduce(lambda prev,x: prev+x['emailRead'],records,0)
+    totalCount = len(records)
+    print(readCount,totalCount)
+    return jsonify({'emailSent':True,'readRatio':readCount/totalCount}),200
 
 @app.route('/api/results/student/<linkID>',methods=['GET'])
 def getResultFromLinkID(linkID) : 

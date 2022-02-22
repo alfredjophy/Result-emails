@@ -51,23 +51,22 @@ def add_result(name,records,dname,course,semester) :
     db.close() 
     return True
 
-def get_result(name):
-    db,cur = connect()
-    # fix the LIKE 
-    cur.execute('select * from results where name like \'{0}\''.format(name))
-    resultInfo = cur.fetchall()  
-    if(resultInfo == ()):
-        return [False]
-    subjects=(resultInfo[0]['subjects']).split(',')
-    cur.execute('select * from {0}'.format(name))
-    records = cur.fetchall()
-    db.close()
-    return [True,{'resultInfo' : {'emailSent' : resultInfo[0]['emailSent'],
-        'uploadDate' : resultInfo[0]['uploadDate'],'subjects' : subjects },'records':records}]
+def get_result(rname):
+    db,cur=connect()
+    cur.execute('select * from results where name like \'{0}\''.format(rname))
+    metadata=cur.fetchall()
+    if metadata == ():
+        return False
+    cur.execute('select * from {0}'.format(rname))
+    results=cur.fetchall()
+    resultInfo = metadata[0]
+    resultInfo['subjects'] = metadata[0]['subjects'].split(',')
+    return {'records':results,'resultInfo':resultInfo}
 
-def get_results():
+
+def get_department_results(department):
     db,cur = connect()
-    cur.execute('select name,uploadDate,emailSent from results order by uploadDate desc')
+    cur.execute('select * from results where depID in (select id from departments where depname like \'{0}\')'.format(department.replace('_',' ')))
     results = cur.fetchall()
     db.close()
     return results
@@ -104,9 +103,16 @@ def get_departments():
     cur.execute('select * from departments order by depname')
     result= cur.fetchall()
     db.close()
-    departments = list(map(lambda x: dict({'name' :x['depname'],'courses':x['courses'].split(',')} ),result))
+    departments = list(map(lambda x: dict({'name' :x['depname'],'courses':sorted(x['courses'].split(','))} ),result))
     print(departments)
     return departments
+
+def in_department(dname):
+    db,cur = connect()
+    cur.execute('select * from departments where depname like \'{0}\''.format(dname))
+    result = cur.fetchall()
+    db.close()
+    return result != ()
 
 def get_courses():
     db,cur = connect()
