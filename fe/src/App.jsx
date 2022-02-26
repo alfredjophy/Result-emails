@@ -6,16 +6,37 @@ import Navbar from "./sections/navbar/Navbar";
 import Results from "./sections/view_results/Result";
 import UploadFile from "./sections/upload_file/UploadFile";
 import Department from "./sections/department/Department";
+import Login from "./sections/login/Login";
+import Restricted from "./sections/restricted/Restricted";
+
+import { useLoginStatus } from "./queries";
 
 function App() {
+    const [loginStatus, setLoginStatus] = useState(null);
+    const getloginStatus = useLoginStatus();
+    if (getloginStatus.isLoading) return <h1>Loading</h1>;
+
+    if (loginStatus === null) setLoginStatus(() => getloginStatus.data);
     return (
         <div>
             <Navbar />
             <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/departments/:dname" element={<Department />} />
-                <Route path="/results/:rname" element={<Results />} />
-                <Route path="/uploadfile" element={<UploadFile />} />
+                <Route
+                    path="/"
+                    element={loginStatus ? <Dashboard /> : <Login />}
+                />
+                <Route
+                    path="/departments/:dname"
+                    element={loginStatus ? <Department /> : <Restricted />}
+                />
+                <Route
+                    path="/results/:rname"
+                    element={loginStatus ? <Results /> : <Restricted />}
+                />
+                <Route
+                    path="/uploadfile"
+                    element={loginStatus ? <UploadFile /> : <Restricted />}
+                />
             </Routes>
         </div>
     );

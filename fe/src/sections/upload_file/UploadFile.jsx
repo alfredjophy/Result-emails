@@ -12,13 +12,21 @@ const UploadFile = () => {
     const [curDep, setcurDep] = useState(0);
     const [semesters, setSemesters] = useState(null);
     const navigate = useNavigate();
-    const uploadFile = useUploadQuery();
+    const uploadFile = useUploadQuery({
+        onSuccess: (data, variables, context) => {
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            navigate(`/results/${data.resultName}`);
+        },
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
         uploadFile.mutate(data);
-        e.reset();
+        e.target.reset();
     };
 
     if (departments.isLoading || courses.isLoading) return <h2>Loading</h2>;

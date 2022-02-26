@@ -1,21 +1,48 @@
 #!/bin/python
-from flask import Flask,jsonify,request
+from flask import Flask,jsonify,request,session
 import os
 import pathlib
+from functools import reduce
+from flask_cors import CORS
 
 import db_functions as db
+import auth_db as auth
 from utils.excel import verifySheet,getRecords,saveFile
 from utils.generateFileName import generateFileName
 from utils.email import send_email
 
-from functools import reduce
-
 app = Flask(__name__)
+app.secret_key = 'Zdds6FFselWSsCPlPPxMTnnyyhRA0W2p/72xAxN/Y79H3UZFYTHU4xcQzg0Qu4XBekFC35bUQTS'
+# ooooh...my keys are exposed
+
+CORS(app)
 
 FILE_STORAGE_PATH = pathlib.Path.home()/'files'
 
 if not FILE_STORAGE_PATH.is_dir():
     os.mkdir(FILE_STORAGE_PATH)
+
+@app.route('/api/isLoggedIn',methods=['GET'])
+def is_logged_in():
+    if 'username' in session:
+        return jsonify({'loginStatus':True}),200
+    return jsonify({'loginStatus':False}),200
+
+@app.route('/api/login',methods=['POST'])
+def auth_login():
+    username,password = request.form['username'],request.form['password']
+    print(username,password)
+    if auth.check_creds(username,password) :
+        user = auth.get_user(username)
+        session['username'] = user['username']
+        # session['role'] = user['role']
+    else:
+        return jsonify({'error':'bad credentials'}),415
+    user = auth.get_user(username)
+    return jsonify(user),200
+
+def require_login(func):
+    return func
 
 @app.route('/api/status',methods=['GET'])
 def app_status() : 
@@ -24,7 +51,6 @@ def app_status() :
 @app.route('/api/upload_sheet',methods=['POST'])
 def upload_sheet() : 
     metadata=request.form
-    print(metadata)
     file=request.files['file']
 
     sheetStatus=verifySheet(file)
@@ -44,6 +70,27 @@ def get_result(dname) :
     result = db.get_department_results(dname)
     return jsonify(result),200
 
+# this is not good
+@app.route('/api/departments/<dname>/stats',methods=['GET'])
+def get_department_stats(dname):
+    if not db.in_department(dname) :
+        return jsonify({"error" : "department not found"}),404
+    results = db.get_department_results(dname)
+    
+    if results == ():
+        return jsonify({'error':'no records found'}),404
+
+    records = list(map(lambda x: db.get_result(x['name']),results))
+
+    def get_stats(records):
+        readCount=reduce(lambda prev,x: prev+x['emailRead'],records,0)
+        totalCount = len(records)
+        return (readCount/totalCount)*100
+
+    stat=reduce(lambda prev,x: ( prev+get_stats(x['records']))/2,records,0)
+
+    return jsonify({'readStats' : stat}),200
+
 @app.route('/api/results/<rname>')
 def getResult(rname):
     result=db.get_result(rname)
@@ -60,7 +107,7 @@ def sendmail(resultName):
         return jsonify({'error':'email already sent'}),415
     records = result['records']
     linkIDs = db.add_uuid_link(records,resultName)
-    send_email('this is threaded',records,linkIDs) 
+    send_email('Subject',records,linkIDs) 
     return jsonify({'status' : 'Emails sent successfully'}),200
 
 @app.route('/api/results/<resultName>/email/stats')
@@ -73,8 +120,7 @@ def getResultEmailReadStats(resultName):
     records = result['records']
     readCount=reduce(lambda prev,x: prev+x['emailRead'],records,0)
     totalCount = len(records)
-    print(readCount,totalCount)
-    return jsonify({'emailSent':True,'readRatio':readCount/totalCount}),200
+    return jsonify({'emailSent':True,'read':readCount,'totalCount':totalCount}),200
 
 @app.route('/api/results/student/<linkID>',methods=['GET'])
 def getResultFromLinkID(linkID) : 

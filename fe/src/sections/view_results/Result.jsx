@@ -9,7 +9,7 @@ const Results = () => {
     const results = useResultQuery(rname, {
         onSuccess: (data) => setButton(!data.resultInfo.emailSent),
     });
-    const sendEmail = useSendMailQuery(rname);
+    const sendEmail = useSendMailQuery({ onSuccess: () => setButton(false) });
 
     if (results.isLoading || sendEmail.isLoading) return <h3>Loading</h3>;
 

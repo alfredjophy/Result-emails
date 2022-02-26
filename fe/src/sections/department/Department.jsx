@@ -16,7 +16,7 @@ const ResultPreview = (props) => {
             <Link to={`/results/${props.rname}`}>{props.rname}</Link>
             {stats.data.emailSent && (
                 <h4>
-                    Read Status : {(stats.data.readRatio * 100).toFixed(2)}%{" "}
+                    Read Status :{stats.data.read} of {stats.data.totalCount}
                 </h4>
             )}
         </div>

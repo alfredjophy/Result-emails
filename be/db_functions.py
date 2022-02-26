@@ -22,10 +22,8 @@ def add_result(name,records,dname,course,semester) :
 
     cur.execute('select * from departments where depname like \'{0}\''.format(dname))
     depID = cur.fetchall()[0]['id']
-    print(depID)
     cur.execute('select * from courses_info where course like \'{0}\''.format(course))
     courseID = cur.fetchall()[0]['id']
-    print(courseID)
     
     # see if already exists
     cur.execute('insert into results(name,uploadDate,emailSent,depID,courseID,semester) values(\'{0}\',CURDATE(),false,{1},{2},{3})'.format(name,depID,courseID,semester))
@@ -63,7 +61,6 @@ def get_result(rname):
     resultInfo['subjects'] = metadata[0]['subjects'].split(',')
     return {'records':results,'resultInfo':resultInfo}
 
-
 def get_department_results(department):
     db,cur = connect()
     cur.execute('select * from results where depID in (select id from departments where depname like \'{0}\')'.format(department.replace('_',' ')))
@@ -91,7 +88,6 @@ def get_data_from_linkID(linkID):
     linkData = cur.fetchall()[0]
     cur.execute('select * from {0} where SI_No like \'{1}\''.format(linkData['name'],linkData['SI_No']))
     record = cur.fetchall()[0]
-    print(record)
     if not record['emailRead']:
         cur.execute('update {0} set emailRead = true where SI_No like \'{1}\''.format(linkData['name'],record['SI_No']))
         db.commit()
@@ -104,7 +100,6 @@ def get_departments():
     result= cur.fetchall()
     db.close()
     departments = list(map(lambda x: dict({'name' :x['depname'],'courses':sorted(x['courses'].split(','))} ),result))
-    print(departments)
     return departments
 
 def in_department(dname):
@@ -120,3 +115,4 @@ def get_courses():
     result=cur.fetchall()     
     db.close()
     return result
+
