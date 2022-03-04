@@ -1,14 +1,14 @@
 import { useAuthLogin } from "../../queries";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import style from "./Login.module.css"
+import style from "./Login.module.css";
 
-const Login = () => {
+const Login = (props) => {
     const navigate = useNavigate();
     const submitLoginForm = useAuthLogin({
         onSuccess: (data, variables, context) => {
             if (data.username) {
-                navigate("/");
+                props.setLoginStatus(() => true);
             } else {
                 alert("Bad credentials");
             }

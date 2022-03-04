@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useState, useEffect, Fragment } from "react";
+import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 
 import Dashboard from "./sections/dashboard/Dashboard";
 import Navbar from "./sections/navbar/Navbar";
@@ -9,39 +9,64 @@ import Department from "./sections/department/Department";
 import Login from "./sections/login/Login";
 import Restricted from "./sections/restricted/Restricted";
 
+import StudentResult from "./sections/studentResult/StudentResult";
+
 import { useLoginStatus } from "./queries";
 
+const Admin = ({ isLoggedIn }) => {
+    return (
+        <Fragment>
+            <Navbar />
+            <Outlet />
+        </Fragment>
+    );
+};
 function App() {
-    const [loginStatus, setLoginStatus] = useState(null);
-    const getloginStatus = useLoginStatus();
+    const [isLoggedIn, setLoginStatus] = useState(null);
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+    const getloginStatus = useLoginStatus({
+        onSuccess: (data) => {
+            setLoginStatus(() => data.loginStatus);
+            if (data.loginStatus) {
+                setUser(() => data);
+                navigate("/dashboard");
+            }
+        },
+    });
+
     if (getloginStatus.isLoading) return <h1>Loading</h1>;
 
-    if (loginStatus === null) setLoginStatus(() => getloginStatus.data);
-
-    return !loginStatus ? (
-        <Login />
-    ) : (
-        <div>
-            <Navbar />
+    return (
+        <>
             <Routes>
                 <Route
                     path="/"
-                    element={loginStatus ? <Dashboard /> : <Restricted />}
+                    element={<Login setLoginStatus={setLoginStatus} />}
                 />
-                <Route
-                    path="/departments/:dname"
-                    element={loginStatus ? <Department /> : <Restricted />}
-                />
-                <Route
-                    path="/results/:rname"
-                    element={loginStatus ? <Results /> : <Restricted />}
-                />
-                <Route
-                    path="/uploadfile"
-                    element={loginStatus ? <UploadFile /> : <Restricted />}
-                />
+                <Route path="/student/result/:id" element={<StudentResult />} />
+                <Route element={isLoggedIn ? <Admin /> : <Restricted />}>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route
+                        path="/departments/:dname"
+                        element={<Department />}
+                    />
+                    <Route path="/results/:rname" element={<Results />} />
+                    <Route
+                        path="/uploadfile"
+                        element={
+                            user !== null && user.level === 0 ? (
+                                <UploadFile />
+                            ) : (
+                                <Restricted />
+                            )
+                        }
+                    />
+                </Route>
+                <Route path="*" element={<h1>Missing</h1>} />
             </Routes>
-        </div>
+        </>
     );
 }
 

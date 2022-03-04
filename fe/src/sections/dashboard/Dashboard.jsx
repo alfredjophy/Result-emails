@@ -6,20 +6,13 @@ const DepartmentCard = (props) => {
     const stats = useDepartmentStatsQuery(props.d.name);
     if (stats.isLoading) return <h4>Loading...</h4>;
     return (
-        
-            <Link className={style.link} key={props.d.name} to={`/departments/${props.d.name}`}>
-                <div className={style.card}>
-                <h4 className={style.sub}>
-                    {props.d.name} 
-                </h4>
-                <h4 className={style.percent}>
-                    {stats.data.readStats} %
-                </h4>
-                </div>  
-            </Link>
-        
+        <Link className={style.link} to={`/departments/${props.d.name}`}>
+            <div className={style.card}>
+                <h4 className={style.sub}>{props.d.name}</h4>
+                <h4 className={style.percent}>{stats.data.readStats} %</h4>
+            </div>
+        </Link>
     );
-    
 };
 const Dashboard = () => {
     const departments = useDepartmentsQuery();
@@ -30,9 +23,9 @@ const Dashboard = () => {
             <h1 className={style.heading}>Status</h1>
             <section className={style.sec}>
                 <div className={style.cards}>
-                {departments.data.map((d) => (
-                    <DepartmentCard key={d.dname} d={d} />
-                ))}
+                    {departments.data.map((d) => (
+                        <DepartmentCard key={d.dname} d={d} />
+                    ))}
                 </div>
             </section>
         </div>

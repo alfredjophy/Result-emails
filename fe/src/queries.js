@@ -3,7 +3,9 @@ import { useQuery, useMutation } from "react-query";
 const BASE_URL = "http://localhost:5050/api";
 
 async function getResult(rname) {
-    const response = await fetch(`${BASE_URL}/results/${rname}`);
+    const response = await fetch(`${BASE_URL}/results/${rname}`, {
+        credentials: "include",
+    });
     const data = await response.json();
     return data;
 }
@@ -15,6 +17,7 @@ async function uploadFile(formData) {
     const response = await fetch(`${BASE_URL}/upload_sheet`, {
         method: "POST",
         body: formData,
+        credentials: "include",
     });
 
     const data = await response.json();
@@ -28,6 +31,7 @@ async function sendMail(rname) {
     const response = await fetch(`${BASE_URL}/results/${rname}/emails/send`, {
         method: "POST",
         body: { send: true },
+        credentials: "include",
     });
     const data = await response.json();
     return data;
@@ -37,7 +41,9 @@ export const useSendMailQuery = (settings) =>
     useMutation(() => sendMail(rname), settings);
 
 async function getDepartments() {
-    const response = await fetch(`${BASE_URL}/departments`);
+    const response = await fetch(`${BASE_URL}/departments`, {
+        credentials: "include",
+    });
     const data = await response.json();
     return data;
 }
@@ -46,7 +52,9 @@ export const useDepartmentsQuery = () =>
     useQuery("departments", getDepartments, { staleTime: 300000 });
 
 async function getCourses() {
-    const response = await fetch(`${BASE_URL}/courses`);
+    const response = await fetch(`${BASE_URL}/courses`, {
+        credentials: "include",
+    });
     const data = await response.json();
     return data;
 }
@@ -56,7 +64,9 @@ export const useCoursesQuery = () =>
 
 async function getDepartmentResults(dname) {
     console.log(dname);
-    const response = await fetch(`${BASE_URL}/departments/${dname}/results`);
+    const response = await fetch(`${BASE_URL}/departments/${dname}/results`, {
+        credentials: "include",
+    });
     const data = await response.json();
     return data;
 }
@@ -69,7 +79,9 @@ export const useDepartmentResultsQuery = (dname, opts) =>
     );
 
 async function getDepartmentStats(dname) {
-    const response = await fetch(`${BASE_URL}/departments/${dname}/stats`);
+    const response = await fetch(`${BASE_URL}/departments/${dname}/stats`, {
+        credentials: "include",
+    });
     const data = await response.json();
     return data;
 }
@@ -78,7 +90,9 @@ export const useDepartmentStatsQuery = (dname) =>
     useQuery(`depStat-${dname}`, () => getDepartmentStats(dname));
 
 async function getResultStats(rname) {
-    const response = await fetch(`${BASE_URL}/results/${rname}/email/stats`);
+    const response = await fetch(`${BASE_URL}/results/${rname}/email/stats`, {
+        credentials: "include",
+    });
     const data = await response.json();
     return data;
 }
@@ -91,18 +105,11 @@ async function getLoginStatus() {
         credentials: "include",
     });
     const data = await response.json();
-    return data.loginStatus;
-}
-
-export const useLoginStatus = () => useQuery(`auth-status`, getLoginStatus);
-
-async function getUserDetails() {
-    const response = await fetch(`${BASE_URL}/user`);
-    const data = await response.json();
     return data;
 }
 
-export const useUserData = () => useQuery(`auth-user`, getUserDetails);
+export const useLoginStatus = (settings) =>
+    useQuery(`auth-status`, getLoginStatus, settings);
 
 async function submitLoginForm(formData) {
     const response = await fetch(`${BASE_URL}/login`, {
@@ -117,3 +124,15 @@ async function submitLoginForm(formData) {
 
 export const useAuthLogin = (settings) =>
     useMutation((formData) => submitLoginForm(formData), settings);
+
+async function authLogout() {
+    const response = await fetch(`${BASE_URL}/logout`, {
+        method: "POST",
+        credentials: "include",
+    });
+    const data = await response.json();
+    return data;
+}
+
+export const useAuthLogout = (settings) =>
+    useMutation(() => authLogout(), settings);

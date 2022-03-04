@@ -11,6 +11,7 @@ from utils.excel import verifySheet,getRecords,saveFile
 from utils.generateFileName import generateFileName
 from utils.email import send_email
 
+
 app = Flask(__name__)
 app.secret_key = 'Zdds6FFselWSsCPlPPxMTnnyyhRA0W2p/72xAxN/Y79H3UZFYTHU4xcQzg0Qu4XBekFC35bUQTS'
 # ooooh...my keys are exposed
@@ -25,24 +26,34 @@ if not FILE_STORAGE_PATH.is_dir():
 @app.route('/api/isLoggedIn',methods=['GET'])
 def is_logged_in():
     if 'username' in session:
-        return jsonify({'loginStatus':True}),200
+        user = auth.get_user(session['username'])
+        user['loginStatus'] = True
+        return jsonify(user),200
     return jsonify({'loginStatus':False}),200
 
 @app.route('/api/login',methods=['POST'])
 def auth_login():
     username,password = request.form['username'],request.form['password']
+    session.clear()
     print(username,password)
     if auth.check_creds(username,password) :
         user = auth.get_user(username)
         session['username'] = user['username']
-        # session['role'] = user['role']
+        session['level'] = user['level']
     else:
         return jsonify({'error':'bad credentials'}),415
     user = auth.get_user(username)
     return jsonify(user),200
 
-def require_login(func):
-    return func
+@app.route('/api/logout',methods=['POST'])
+def auth_logout():
+    session.clear()
+    return jsonify({'status':'logged out'}),200
+    
+def authorization(level):
+    if 'username' in session and 'level' in session and session['level'] <= level :
+        return True
+    return False
 
 @app.route('/api/status',methods=['GET'])
 def app_status() : 
@@ -50,6 +61,8 @@ def app_status() :
 
 @app.route('/api/upload_sheet',methods=['POST'])
 def upload_sheet() : 
+    if not authorization(0):
+        return jsonify({'error':'unauthenticated'}),415
     metadata=request.form
     file=request.files['file']
 
@@ -65,6 +78,8 @@ def upload_sheet() :
 
 @app.route('/api/departments/<dname>/results',methods=['GET'])
 def get_result(dname) :
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
     if not db.in_department(dname) :
         return jsonify({"error" : "department not found"}),404
     result = db.get_department_results(dname)
@@ -73,6 +88,9 @@ def get_result(dname) :
 # this is not good
 @app.route('/api/departments/<dname>/stats',methods=['GET'])
 def get_department_stats(dname):
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
+
     if not db.in_department(dname) :
         return jsonify({"error" : "department not found"}),404
     results = db.get_department_results(dname)
@@ -93,6 +111,9 @@ def get_department_stats(dname):
 
 @app.route('/api/results/<rname>')
 def getResult(rname):
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
+
     result=db.get_result(rname)
     if not result :
         return jsonify({'error':'result not found'}),404
@@ -100,6 +121,9 @@ def getResult(rname):
 
 @app.route('/api/results/<resultName>/emails/send',methods=['POST'])
 def sendmail(resultName):
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
+
     result = db.get_result(resultName)
     if not result :
         return jsonify({"error" : "result not found"}),404
@@ -112,6 +136,9 @@ def sendmail(resultName):
 
 @app.route('/api/results/<resultName>/email/stats')
 def getResultEmailReadStats(resultName):
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
+
     result = db.get_result(resultName)
     if not result :
         return jsonify({"error" : "result not found"}),404
@@ -131,11 +158,17 @@ def getResultFromLinkID(linkID) :
 
 @app.route('/api/departments',methods=['GET'])
 def get_departments():
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
+
     departments = db.get_departments()
     return jsonify(departments),200
 
 @app.route('/api/courses',methods=['GET'])
 def get_course():
+    if not authorization(1):
+        return jsonify({'error':'unauthenticated'}),415
+
     record  = db.get_courses()
     if record == ():
         return jsonify({'error':'course not found'}),404

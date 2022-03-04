@@ -16,7 +16,7 @@ def get_user(username):
     db,cur = connect()
     cur.execute('select * from auth where username like \'{0}\''.format(username))
     result = cur.fetchall()[0]
-    return {'username':result['username'],'role':result['level']}
+    return {'username':result['username'],'level':result['level']}
 
 def add_user(username,password,role):
     db,cur = connect()
