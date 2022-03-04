@@ -1,6 +1,7 @@
 import { useAuthLogin } from "../../queries";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import style from "./Login.module.css"
 
 const Login = () => {
     const navigate = useNavigate();
@@ -20,14 +21,10 @@ const Login = () => {
         e.target.reset();
     };
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label name="username">Username</label>
-                <input name="username" />
-                <br />
-                <label name="password">Password</label>
-                <input name="password" type="password" />
-                <br />
+        <div className={style.formBody}>
+            <form onSubmit={handleSubmit} className={style.form}>
+                <input name="username" placeholder="USERNAME" />
+                <input name="password" type="password" placeholder="PASSWORD" />
                 <input type="submit" name="Submit" />
             </form>
         </div>

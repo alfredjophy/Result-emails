@@ -1,0 +1,25 @@
+.navbar{
+    position: fixed;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    background: #043565;
+    top: 0;
+}
+.link{
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    padding: 10px;
+    transition: .2s ease-in;
+}
+.logout{
+    position: absolute;
+    right: 20px;
+    width: 75px;
+    padding: 5px;
+}
+.link:hover{
+    background: rgba(255,255,255,.1);
+}
