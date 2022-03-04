@@ -16,13 +16,13 @@ def get_user(username):
     db,cur = connect()
     cur.execute('select * from auth where username like \'{0}\''.format(username))
     result = cur.fetchall()[0]
-    return {'username':result['username'],'role':result['role']}
+    return {'username':result['username'],'role':result['level']}
 
 def add_user(username,password,role):
     db,cur = connect()
     salt = bcrypt.gensalt()
     password_hash = bcrypt.hashpw(password.encode('utf-8'),salt)
-    insert = 'insert into auth(username,role,pw_hash) values(%s,%s,_binary %s)'
+    insert = 'insert into auth(username,level,pw_hash) values(%s,%s,_binary %s)'
     values = [username,role,pymysql.Binary(password_hash)]
     cur.execute(insert,values)
     db.commit()

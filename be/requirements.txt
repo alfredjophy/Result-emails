@@ -3,3 +3,4 @@ bcrypt
 PyMySQL
 openpyxl
 flask
+flask_cors

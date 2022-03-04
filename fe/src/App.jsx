@@ -17,13 +17,16 @@ function App() {
     if (getloginStatus.isLoading) return <h1>Loading</h1>;
 
     if (loginStatus === null) setLoginStatus(() => getloginStatus.data);
-    return (
+
+    return !loginStatus ? (
+        <Login />
+    ) : (
         <div>
             <Navbar />
             <Routes>
                 <Route
                     path="/"
-                    element={loginStatus ? <Dashboard /> : <Login />}
+                    element={loginStatus ? <Dashboard /> : <Restricted />}
                 />
                 <Route
                     path="/departments/:dname"
