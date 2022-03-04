@@ -136,3 +136,12 @@ async function authLogout() {
 
 export const useAuthLogout = (settings) =>
     useMutation(() => authLogout(), settings);
+
+async function getStudentResult(id) {
+    const response = await fetch(`${BASE_URL}/results/student/${id}`);
+    const data = await response.json();
+    return data;
+}
+
+export const useStudentResult = (id, settings) =>
+    useQuery("student-result", () => getStudentResult(id));
