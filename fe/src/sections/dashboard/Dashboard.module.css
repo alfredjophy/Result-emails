@@ -3,25 +3,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
 
 }
 .heading{
     text-align: center;
-    margin-top: 7rem;
+    margin-top: 6rem;
 }
 .cards{
     display: grid;
     grid-template-columns: repeat(3, minmax(18rem, 1fr));
     align-items: center;
     justify-items: center;
+
 }
 .card{
     background: rgb(102, 102, 102,.5);
     width: 18rem;
     max-width: 27rem;
     height: 10rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -38,6 +39,7 @@
     position: absolute;
     right: 10px;
     bottom: -10px;
+    color: white;
     background: red;
 }
 

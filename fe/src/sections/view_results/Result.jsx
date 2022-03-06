@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useResultQuery, useSendMailQuery } from "../../queries";
 import { useState, useEffect } from "react";
+import style from "./Result.module.css"
 
 const Results = () => {
     let { rname } = useParams();
@@ -14,9 +15,9 @@ const Results = () => {
     if (results.isLoading || sendEmail.isLoading) return <h3>Loading</h3>;
 
     return (
-        <div>
+        <div className={style.container}>
             {sendButton && (
-                <button
+                <button className={style.send}
                     onClick={() => {
                         sendEmail.mutate(rname);
                         setButton(() => false);
@@ -25,7 +26,8 @@ const Results = () => {
                     Send Email
                 </button>
             )}
-            <table>
+            <table className={style.tab}>
+                <thead>
                 <tr>
                     <th>SI No</th>
                     <th>Name</th>
@@ -35,7 +37,9 @@ const Results = () => {
                     ))}
                     <th>EmailRead</th>
                 </tr>
+                </thead>
 
+                <tbody>
                 {results.data.records.map((e) => (
                     <tr key={e.SI_No}>
                         <td>{e.SI_No}</td>
@@ -47,6 +51,7 @@ const Results = () => {
                         <td>{e.emailRead ? "Seen" : "Not seen"}</td>
                     </tr>
                 ))}
+                </tbody>
             </table>
         </div>
     );

@@ -1,0 +1,30 @@
+.container{
+    margin-top: 5rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.send{
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 10px;
+    margin-left: 1rem;
+}
+.tab{
+    width: 90%;
+    overflow-x: auto;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+tr,th,td{
+
+    border-collapse: collapse;
+    border: 1px solid black;
+    height: 35px;
+}

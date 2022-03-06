@@ -6,6 +6,7 @@ import {
     useResultStatsQuery,
 } from "../../queries";
 import { Link } from "react-router-dom";
+import style from "./Department.module.css"
 
 const ResultPreview = (props) => {
     const stats = useResultStatsQuery(props.rname);
@@ -41,7 +42,7 @@ const Department = () => {
 
     // this will look better once the design is done
     return (
-        <div>
+        <div className={style.container}>
             {getDepartmentCourses.map((course) => (
                 <div key={course}>
                     <h4>{course}</h4>

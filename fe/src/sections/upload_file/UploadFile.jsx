@@ -5,6 +5,7 @@ import {
 } from "../../queries";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import style from "./Upload.module.css";
 
 const UploadFile = () => {
     const departments = useDepartmentsQuery();
@@ -38,7 +39,7 @@ const UploadFile = () => {
     }
 
     return (
-        <div>
+        <div className={style.formbox}>
             <br />
             <br />
             <br />

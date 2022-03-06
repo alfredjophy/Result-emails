@@ -1,0 +1,12 @@
+.restricted{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+    background: red;
+    color: white;
+}
+.text{
+    font-size: 2.5rem;
+}

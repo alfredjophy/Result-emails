@@ -9,7 +9,8 @@
 }
 .link{
     color: white;
-    margin: 0 20px;
+    position: relative;
+    left: 20px;
     text-decoration: none;
     padding: 10px;
     transition: .2s ease-in;
