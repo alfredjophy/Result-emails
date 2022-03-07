@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useResultQuery, useSendMailQuery } from "../../queries";
 import { useState, useEffect } from "react";
-import style from "./Result.module.css"
+import style from "./Result.module.css";
+import generatePDF from "../../utils/pdf";
 
 const Results = () => {
     let { rname } = useParams();
@@ -12,12 +13,24 @@ const Results = () => {
     });
     const sendEmail = useSendMailQuery({ onSuccess: () => setButton(false) });
 
+    const printResult = (d) => {
+        const data = d.data.records.map((r) => {
+            return {
+                "SI No": r.SI_No,
+                Name: r.Name,
+                Email: r.Email,
+                "Email Read": r.emailRead ? "Yes" : "No",
+            };
+        });
+        generatePDF("Results", data);
+    };
     if (results.isLoading || sendEmail.isLoading) return <h3>Loading</h3>;
 
     return (
         <div className={style.container}>
-            {sendButton && (
-                <button className={style.send}
+            {sendButton ? (
+                <button
+                    className={style.send}
                     onClick={() => {
                         sendEmail.mutate(rname);
                         setButton(() => false);
@@ -25,32 +38,39 @@ const Results = () => {
                 >
                     Send Email
                 </button>
+            ) : (
+                <button
+                    className={style.send}
+                    onClick={() => printResult(results)}
+                >
+                    Print
+                </button>
             )}
             <table className={style.tab}>
                 <thead>
-                <tr>
-                    <th>SI No</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    {results.data.resultInfo.subjects.map((s) => (
-                        <th>{s}</th>
-                    ))}
-                    <th>EmailRead</th>
-                </tr>
+                    <tr>
+                        <th>SI No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        {results.data.resultInfo.subjects.map((s) => (
+                            <th>{s}</th>
+                        ))}
+                        <th>EmailRead</th>
+                    </tr>
                 </thead>
 
                 <tbody>
-                {results.data.records.map((e) => (
-                    <tr key={e.SI_No}>
-                        <td>{e.SI_No}</td>
-                        <td>{e.Name}</td>
-                        <td>{e.Email}</td>
-                        {results.data.resultInfo.subjects.map((s) => (
-                            <td>{e[s.replace(" ", "_")]}</td>
-                        ))}
-                        <td>{e.emailRead ? "Seen" : "Not seen"}</td>
-                    </tr>
-                ))}
+                    {results.data.records.map((e) => (
+                        <tr key={e.SI_No}>
+                            <td>{e.SI_No}</td>
+                            <td>{e.Name}</td>
+                            <td>{e.Email}</td>
+                            {results.data.resultInfo.subjects.map((s) => (
+                                <td>{e[s.replace(" ", "_")]}</td>
+                            ))}
+                            <td>{e.emailRead ? "Seen" : "Not seen"}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

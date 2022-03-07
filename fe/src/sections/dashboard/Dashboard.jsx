@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import style from "./Dashboard.module.css";
+import generatePDF from "../../utils/pdf";
 import { useDepartmentsQuery, useDepartmentStatsQuery } from "../../queries";
 
 const DepartmentCard = (props) => {
     const stats = useDepartmentStatsQuery(props.d.name);
     if (stats.isLoading) return <h4>Loading...</h4>;
-    console.log(stats.data.readStats);
     return (
         <Link className={style.link} to={`/departments/${props.d.name}`}>
             <div className={style.card}>
@@ -23,6 +23,17 @@ const DepartmentCard = (props) => {
 };
 const Dashboard = () => {
     const departments = useDepartmentsQuery();
+
+    const printDash = (d) => {
+        const data = d.data.map((dep) => {
+            return {
+                Department: dep.name,
+                "Email Read": 500,
+            };
+        });
+        generatePDF("Departments", data);
+    };
+
     if (departments.isLoading) return <h1>Loading</h1>;
 
     return (
@@ -35,6 +46,7 @@ const Dashboard = () => {
                     ))}
                 </div>
             </section>
+            <button onClick={() => printDash(departments)}>Print</button>
         </div>
     );
 };
