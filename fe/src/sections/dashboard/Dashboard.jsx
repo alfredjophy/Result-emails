@@ -44,6 +44,7 @@ const Dashboard = () => {
     return (
         <div>
             <h1 className={style.heading}>Status</h1>
+            <button className={style.print} onClick={printDash}>Print</button>
             <section className={style.sec}>
                 <div className={style.cards}>
                     {departments.data.map((d) => (
@@ -51,7 +52,6 @@ const Dashboard = () => {
                     ))}
                 </div>
             </section>
-            <button onClick={printDash}>Print</button>
         </div>
     );
 };

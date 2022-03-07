@@ -6,7 +6,7 @@ import {
     useResultStatsQuery,
 } from "../../queries";
 import { Link } from "react-router-dom";
-import style from "./Department.module.css"
+import style from "./Department.module.css";
 
 const ResultPreview = (props) => {
     const stats = useResultStatsQuery(props.rname);
@@ -14,7 +14,7 @@ const ResultPreview = (props) => {
 
     return (
         <div>
-            <Link to={`/results/${props.rname}`}>{props.rname}</Link>
+            <Link className={style.link} to={`/results/${props.rname}`}>{props.rname}</Link>
             {stats.data.emailSent && (
                 <h4>
                     Read Status :{stats.data.read} of {stats.data.totalCount}
@@ -43,9 +43,10 @@ const Department = () => {
     // this will look better once the design is done
     return (
         <div className={style.container}>
+            <div className={style.box}>
             {getDepartmentCourses.map((course) => (
                 <div key={course}>
-                    <h4>{course}</h4>
+                    <h4 className={style.h4}>{course}</h4>
                     {results.data
                         .filter(
                             (r) =>
@@ -57,6 +58,7 @@ const Department = () => {
                         ))}
                 </div>
             ))}
+            </div>
         </div>
     );
 };

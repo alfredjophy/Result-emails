@@ -7,3 +7,24 @@
     flex-direction: column;
     text-align: center;
 }
+.box{
+    width: 80%;
+    max-width: 40rem;
+    background: #043565;
+    padding: 2rem 0;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}
+.h4{
+    text-align: left;
+    color: black;
+    position: relative;
+    left: 25%;
+    background-color: white;
+    width: max-content;
+    padding: 8px;
+    border-radius: 5px;
+}

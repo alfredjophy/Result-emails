@@ -1,26 +1,70 @@
 .navbar{
     position: fixed;
-    height: 56px;
+    height: 85px;
+    width: 100vw;
     display: flex;
     align-items: center;
-    width: 100vw;
+    justify-content: center;
     background: #043565;
     top: 0;
+    z-index: 12;
+}
+.links{
+    width: 80%;
 }
 .link{
-    color: white;
-    position: relative;
-    left: 20px;
+    color: black;
+    border: none;
+    background: white;
+    left: 0;
     text-decoration: none;
     padding: 10px;
     transition: .2s ease-in;
+    margin-left: 5px;
+}
+.ico{
+    transform: rotate(90deg);
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+}
+.ico2{
+    position: relative;
+    top: 2px;
+    
+}
+.imglogo{
+    width: 20%;
+    position: relative;
+    left: 20px;
+}
+.imglogo img{
+    position: relative;
+    height: 60px;
+    left: 0;
+    top: 2px;
 }
 .logout{
-    position: absolute;
+    position: relative;
     right: 20px;
-    width: 75px;
+    width: 100px;
     padding: 5px;
+    background: white;
+    border: none;
+}
+.logout:hover{
+    background: wheat;
 }
 .link:hover{
     background: rgba(255,255,255,.1);
+    color: white;
+    box-shadow: 0px 0px 5px 0px black;
+}
+@media (max-width: 828px) {
+    .imglogo{
+        width: 40%;
+    }
+    .imglogo img{
+        height: 50px;
+    }
 }

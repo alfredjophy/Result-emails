@@ -17,16 +17,17 @@
 
 }
 .card{
-    background: rgb(102, 102, 102,.5);
+    background: #043565;
     width: 18rem;
     max-width: 27rem;
-    height: 10rem;
+    height: 7rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    color: white;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-left: 20px;
+    border-radius: 9px;
 }
 .link{
     text-decoration: none;
@@ -40,7 +41,20 @@
     right: 10px;
     bottom: -10px;
     color: white;
-    background: red;
+    background: green;
+    padding: 3px;
+    border-radius: 5px;
+}
+.card:hover{
+    background: rgba(4, 53, 101, 0.8);
+}
+.print{
+    position: absolute;
+    left: 90%;
+    top: 10.5%;
+    height: 35px;
+    width: 50px;
+    padding: 5px;
 }
 
 @media (min-width: 1100px) {
