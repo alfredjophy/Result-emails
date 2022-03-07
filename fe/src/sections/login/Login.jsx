@@ -9,17 +9,21 @@ const Login = (props) => {
         onSuccess: (data, variables, context) => {
             if (data.username) {
                 props.setLoginStatus(() => true);
+                navigate("/dashboard");
             } else {
                 alert("Bad credentials");
             }
         },
     });
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
         submitLoginForm.mutate(data);
         e.target.reset();
     };
+
+    if (submitLoginForm.isLoading) return <h1>Loading</h1>;
     return (
         <div className={style.formBody}>
             <form onSubmit={handleSubmit} className={style.form}>

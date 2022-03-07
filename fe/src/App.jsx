@@ -26,10 +26,11 @@ function App() {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
+    console.log(user);
     const getloginStatus = useLoginStatus({
         onSuccess: (data) => {
             setLoginStatus(() => data.loginStatus);
-            if (data.loginStatus) {
+            if (data.loginStatus && isLoggedIn === null) {
                 setUser(() => data);
                 navigate("/dashboard");
             }
@@ -56,7 +57,7 @@ function App() {
                     <Route
                         path="/uploadfile"
                         element={
-                            user !== null && user.level === 0 ? (
+                            user !== null && user.level == 0 ? (
                                 <UploadFile />
                             ) : (
                                 <Restricted />

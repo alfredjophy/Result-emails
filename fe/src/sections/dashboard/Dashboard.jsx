@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import style from "./Dashboard.module.css";
 import generatePDF from "../../utils/pdf";
-import { useDepartmentsQuery, useDepartmentStatsQuery } from "../../queries";
+import {
+    getDepartmentDetails,
+    useDepartmentsQuery,
+    useDepartmentStatsQuery,
+} from "../../queries";
 
 const DepartmentCard = (props) => {
     const stats = useDepartmentStatsQuery(props.d.name);
@@ -24,11 +28,12 @@ const DepartmentCard = (props) => {
 const Dashboard = () => {
     const departments = useDepartmentsQuery();
 
-    const printDash = (d) => {
-        const data = d.data.map((dep) => {
+    const printDash = async () => {
+        const details = await getDepartmentDetails();
+        const data = details.map((dep) => {
             return {
                 Department: dep.name,
-                "Email Read": 500,
+                "Email Read": `${dep.stats.toFixed(2)} %`,
             };
         });
         generatePDF("Departments", data);
@@ -46,7 +51,7 @@ const Dashboard = () => {
                     ))}
                 </div>
             </section>
-            <button onClick={() => printDash(departments)}>Print</button>
+            <button onClick={printDash}>Print</button>
         </div>
     );
 };

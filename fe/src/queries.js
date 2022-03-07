@@ -86,6 +86,19 @@ async function getDepartmentStats(dname) {
     return data;
 }
 
+export async function getDepartmentDetails() {
+    const departments = await getDepartments();
+    const details = [];
+    for (let i = 0; i < departments.length; i++) {
+        const stats = await getDepartmentStats(departments[i].name);
+        details.push({
+            name: departments[i].name,
+            stats: stats.readStats == undefined ? 0 : stats.readStats,
+        });
+    }
+    return details;
+}
+
 export const useDepartmentStatsQuery = (dname) =>
     useQuery(`depStat-${dname}`, () => getDepartmentStats(dname));
 

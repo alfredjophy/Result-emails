@@ -45,7 +45,12 @@ const UploadFile = () => {
             <br />
 
             <form onSubmit={handleSubmit}>
-                <input type="file" name="file" required />
+                <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => null}
+                    required
+                />
                 <label name="department">Select Department</label>
                 <select
                     name="department"
