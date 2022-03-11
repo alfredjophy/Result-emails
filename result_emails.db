@@ -1,0 +1,2549 @@
+-- MariaDB dump 10.19  Distrib 10.7.3-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: result_emails
+-- ------------------------------------------------------
+-- Server version	10.7.3-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `BA_Economics_S5_2022_03_23`
+--
+
+DROP TABLE IF EXISTS `BA_Economics_S5_2022_03_23`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BA_Economics_S5_2022_03_23` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BA_Economics_S5_2022_03_23`
+--
+
+LOCK TABLES `BA_Economics_S5_2022_03_23` WRITE;
+/*!40000 ALTER TABLE `BA_Economics_S5_2022_03_23` DISABLE KEYS */;
+INSERT INTO `BA_Economics_S5_2022_03_23` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `BA_Economics_S5_2022_03_23` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BScCS2022Feb`
+--
+
+DROP TABLE IF EXISTS `BScCS2022Feb`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BScCS2022Feb` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BScCS2022Feb`
+--
+
+LOCK TABLES `BScCS2022Feb` WRITE;
+/*!40000 ALTER TABLE `BScCS2022Feb` DISABLE KEYS */;
+INSERT INTO `BScCS2022Feb` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',1),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `BScCS2022Feb` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BSc_Botany_S5_2022_02_13`
+--
+
+DROP TABLE IF EXISTS `BSc_Botany_S5_2022_02_13`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BSc_Botany_S5_2022_02_13` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BSc_Botany_S5_2022_02_13`
+--
+
+LOCK TABLES `BSc_Botany_S5_2022_02_13` WRITE;
+/*!40000 ALTER TABLE `BSc_Botany_S5_2022_02_13` DISABLE KEYS */;
+INSERT INTO `BSc_Botany_S5_2022_02_13` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `BSc_Botany_S5_2022_02_13` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BSc_Computer_Science_S3_2022_02_09`
+--
+
+DROP TABLE IF EXISTS `BSc_Computer_Science_S3_2022_02_09`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BSc_Computer_Science_S3_2022_02_09` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BSc_Computer_Science_S3_2022_02_09`
+--
+
+LOCK TABLES `BSc_Computer_Science_S3_2022_02_09` WRITE;
+/*!40000 ALTER TABLE `BSc_Computer_Science_S3_2022_02_09` DISABLE KEYS */;
+INSERT INTO `BSc_Computer_Science_S3_2022_02_09` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `BSc_Computer_Science_S3_2022_02_09` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BSc_Computer_Science_S6_2022_02_08`
+--
+
+DROP TABLE IF EXISTS `BSc_Computer_Science_S6_2022_02_08`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BSc_Computer_Science_S6_2022_02_08` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BSc_Computer_Science_S6_2022_02_08`
+--
+
+LOCK TABLES `BSc_Computer_Science_S6_2022_02_08` WRITE;
+/*!40000 ALTER TABLE `BSc_Computer_Science_S6_2022_02_08` DISABLE KEYS */;
+INSERT INTO `BSc_Computer_Science_S6_2022_02_08` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',1),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',1),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',1),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',1);
+/*!40000 ALTER TABLE `BSc_Computer_Science_S6_2022_02_08` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BSc_Mathematics_S1_2022_02_01`
+--
+
+DROP TABLE IF EXISTS `BSc_Mathematics_S1_2022_02_01`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BSc_Mathematics_S1_2022_02_01` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BSc_Mathematics_S1_2022_02_01`
+--
+
+LOCK TABLES `BSc_Mathematics_S1_2022_02_01` WRITE;
+/*!40000 ALTER TABLE `BSc_Mathematics_S1_2022_02_01` DISABLE KEYS */;
+INSERT INTO `BSc_Mathematics_S1_2022_02_01` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `BSc_Mathematics_S1_2022_02_01` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BSc_Mathematics_S4_2022_02_28`
+--
+
+DROP TABLE IF EXISTS `BSc_Mathematics_S4_2022_02_28`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BSc_Mathematics_S4_2022_02_28` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BSc_Mathematics_S4_2022_02_28`
+--
+
+LOCK TABLES `BSc_Mathematics_S4_2022_02_28` WRITE;
+/*!40000 ALTER TABLE `BSc_Mathematics_S4_2022_02_28` DISABLE KEYS */;
+INSERT INTO `BSc_Mathematics_S4_2022_02_28` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `BSc_Mathematics_S4_2022_02_28` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BSc_Physics_S3_2022_02_07`
+--
+
+DROP TABLE IF EXISTS `BSc_Physics_S3_2022_02_07`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BSc_Physics_S3_2022_02_07` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BSc_Physics_S3_2022_02_07`
+--
+
+LOCK TABLES `BSc_Physics_S3_2022_02_07` WRITE;
+/*!40000 ALTER TABLE `BSc_Physics_S3_2022_02_07` DISABLE KEYS */;
+INSERT INTO `BSc_Physics_S3_2022_02_07` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',1),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `BSc_Physics_S3_2022_02_07` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `DX`
+--
+
+DROP TABLE IF EXISTS `DX`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DX` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `DX`
+--
+
+LOCK TABLES `DX` WRITE;
+/*!40000 ALTER TABLE `DX` DISABLE KEYS */;
+INSERT INTO `DX` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `DX` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `HELLO`
+--
+
+DROP TABLE IF EXISTS `HELLO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HELLO` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HELLO`
+--
+
+LOCK TABLES `HELLO` WRITE;
+/*!40000 ALTER TABLE `HELLO` DISABLE KEYS */;
+INSERT INTO `HELLO` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `HELLO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Helloooooo`
+--
+
+DROP TABLE IF EXISTS `Helloooooo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Helloooooo` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Helloooooo`
+--
+
+LOCK TABLES `Helloooooo` WRITE;
+/*!40000 ALTER TABLE `Helloooooo` DISABLE KEYS */;
+INSERT INTO `Helloooooo` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `Helloooooo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MA_Economics_S1_2022_02_01`
+--
+
+DROP TABLE IF EXISTS `MA_Economics_S1_2022_02_01`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MA_Economics_S1_2022_02_01` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MA_Economics_S1_2022_02_01`
+--
+
+LOCK TABLES `MA_Economics_S1_2022_02_01` WRITE;
+/*!40000 ALTER TABLE `MA_Economics_S1_2022_02_01` DISABLE KEYS */;
+INSERT INTO `MA_Economics_S1_2022_02_01` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MA_Economics_S1_2022_02_01` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MA_Economics_S1_2022_02_16`
+--
+
+DROP TABLE IF EXISTS `MA_Economics_S1_2022_02_16`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MA_Economics_S1_2022_02_16` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MA_Economics_S1_2022_02_16`
+--
+
+LOCK TABLES `MA_Economics_S1_2022_02_16` WRITE;
+/*!40000 ALTER TABLE `MA_Economics_S1_2022_02_16` DISABLE KEYS */;
+INSERT INTO `MA_Economics_S1_2022_02_16` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MA_Economics_S1_2022_02_16` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MA_Economics_S3_2022_02_09`
+--
+
+DROP TABLE IF EXISTS `MA_Economics_S3_2022_02_09`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MA_Economics_S3_2022_02_09` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MA_Economics_S3_2022_02_09`
+--
+
+LOCK TABLES `MA_Economics_S3_2022_02_09` WRITE;
+/*!40000 ALTER TABLE `MA_Economics_S3_2022_02_09` DISABLE KEYS */;
+INSERT INTO `MA_Economics_S3_2022_02_09` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',1),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',1),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',1),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',1);
+/*!40000 ALTER TABLE `MA_Economics_S3_2022_02_09` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MCA_Botany_S2_2022_02_08`
+--
+
+DROP TABLE IF EXISTS `MCA_Botany_S2_2022_02_08`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MCA_Botany_S2_2022_02_08` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MCA_Botany_S2_2022_02_08`
+--
+
+LOCK TABLES `MCA_Botany_S2_2022_02_08` WRITE;
+/*!40000 ALTER TABLE `MCA_Botany_S2_2022_02_08` DISABLE KEYS */;
+INSERT INTO `MCA_Botany_S2_2022_02_08` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MCA_Botany_S2_2022_02_08` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MCA_Chemistry_S3_2022_02_10`
+--
+
+DROP TABLE IF EXISTS `MCA_Chemistry_S3_2022_02_10`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MCA_Chemistry_S3_2022_02_10` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MCA_Chemistry_S3_2022_02_10`
+--
+
+LOCK TABLES `MCA_Chemistry_S3_2022_02_10` WRITE;
+/*!40000 ALTER TABLE `MCA_Chemistry_S3_2022_02_10` DISABLE KEYS */;
+INSERT INTO `MCA_Chemistry_S3_2022_02_10` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MCA_Chemistry_S3_2022_02_10` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MCA_Computer_Science_S2_2022_02_01`
+--
+
+DROP TABLE IF EXISTS `MCA_Computer_Science_S2_2022_02_01`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MCA_Computer_Science_S2_2022_02_01` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MCA_Computer_Science_S2_2022_02_01`
+--
+
+LOCK TABLES `MCA_Computer_Science_S2_2022_02_01` WRITE;
+/*!40000 ALTER TABLE `MCA_Computer_Science_S2_2022_02_01` DISABLE KEYS */;
+INSERT INTO `MCA_Computer_Science_S2_2022_02_01` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',1),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',1),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MCA_Computer_Science_S2_2022_02_01` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MCA_Mathematics_S3_2022_03_24`
+--
+
+DROP TABLE IF EXISTS `MCA_Mathematics_S3_2022_03_24`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MCA_Mathematics_S3_2022_03_24` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MCA_Mathematics_S3_2022_03_24`
+--
+
+LOCK TABLES `MCA_Mathematics_S3_2022_03_24` WRITE;
+/*!40000 ALTER TABLE `MCA_Mathematics_S3_2022_03_24` DISABLE KEYS */;
+INSERT INTO `MCA_Mathematics_S3_2022_03_24` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MCA_Mathematics_S3_2022_03_24` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MCA_Physics_S2_2022_02_21`
+--
+
+DROP TABLE IF EXISTS `MCA_Physics_S2_2022_02_21`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MCA_Physics_S2_2022_02_21` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MCA_Physics_S2_2022_02_21`
+--
+
+LOCK TABLES `MCA_Physics_S2_2022_02_21` WRITE;
+/*!40000 ALTER TABLE `MCA_Physics_S2_2022_02_21` DISABLE KEYS */;
+INSERT INTO `MCA_Physics_S2_2022_02_21` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MCA_Physics_S2_2022_02_21` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MSc_Botany_S1_2022_02_02`
+--
+
+DROP TABLE IF EXISTS `MSc_Botany_S1_2022_02_02`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MSc_Botany_S1_2022_02_02` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MSc_Botany_S1_2022_02_02`
+--
+
+LOCK TABLES `MSc_Botany_S1_2022_02_02` WRITE;
+/*!40000 ALTER TABLE `MSc_Botany_S1_2022_02_02` DISABLE KEYS */;
+INSERT INTO `MSc_Botany_S1_2022_02_02` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MSc_Botany_S1_2022_02_02` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MSc_Computer_Science_S1_2022_02_01`
+--
+
+DROP TABLE IF EXISTS `MSc_Computer_Science_S1_2022_02_01`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MSc_Computer_Science_S1_2022_02_01` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MSc_Computer_Science_S1_2022_02_01`
+--
+
+LOCK TABLES `MSc_Computer_Science_S1_2022_02_01` WRITE;
+/*!40000 ALTER TABLE `MSc_Computer_Science_S1_2022_02_01` DISABLE KEYS */;
+INSERT INTO `MSc_Computer_Science_S1_2022_02_01` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',1),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',1),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',1),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',1),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',1),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',1),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',1);
+/*!40000 ALTER TABLE `MSc_Computer_Science_S1_2022_02_01` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MSc_Mathematics_S3_2022_03_01`
+--
+
+DROP TABLE IF EXISTS `MSc_Mathematics_S3_2022_03_01`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MSc_Mathematics_S3_2022_03_01` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MSc_Mathematics_S3_2022_03_01`
+--
+
+LOCK TABLES `MSc_Mathematics_S3_2022_03_01` WRITE;
+/*!40000 ALTER TABLE `MSc_Mathematics_S3_2022_03_01` DISABLE KEYS */;
+INSERT INTO `MSc_Mathematics_S3_2022_03_01` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MSc_Mathematics_S3_2022_03_01` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MSc_Physics_S4_2023_04_05`
+--
+
+DROP TABLE IF EXISTS `MSc_Physics_S4_2023_04_05`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MSc_Physics_S4_2023_04_05` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MSc_Physics_S4_2023_04_05`
+--
+
+LOCK TABLES `MSc_Physics_S4_2023_04_05` WRITE;
+/*!40000 ALTER TABLE `MSc_Physics_S4_2023_04_05` DISABLE KEYS */;
+INSERT INTO `MSc_Physics_S4_2023_04_05` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MSc_Physics_S4_2023_04_05` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MSc_Psychology_S3_2022_02_08`
+--
+
+DROP TABLE IF EXISTS `MSc_Psychology_S3_2022_02_08`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MSc_Psychology_S3_2022_02_08` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MSc_Psychology_S3_2022_02_08`
+--
+
+LOCK TABLES `MSc_Psychology_S3_2022_02_08` WRITE;
+/*!40000 ALTER TABLE `MSc_Psychology_S3_2022_02_08` DISABLE KEYS */;
+INSERT INTO `MSc_Psychology_S3_2022_02_08` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',1),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `MSc_Psychology_S3_2022_02_08` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `PLSWOrkD`
+--
+
+DROP TABLE IF EXISTS `PLSWOrkD`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `PLSWOrkD` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `PLSWOrkD`
+--
+
+LOCK TABLES `PLSWOrkD` WRITE;
+/*!40000 ALTER TABLE `PLSWOrkD` DISABLE KEYS */;
+INSERT INTO `PLSWOrkD` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `PLSWOrkD` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TTTTTTTTT`
+--
+
+DROP TABLE IF EXISTS `TTTTTTTTT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TTTTTTTTT` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TTTTTTTTT`
+--
+
+LOCK TABLES `TTTTTTTTT` WRITE;
+/*!40000 ALTER TABLE `TTTTTTTTT` DISABLE KEYS */;
+INSERT INTO `TTTTTTTTT` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',1);
+/*!40000 ALTER TABLE `TTTTTTTTT` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Threading1`
+--
+
+DROP TABLE IF EXISTS `Threading1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Threading1` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Threading1`
+--
+
+LOCK TABLES `Threading1` WRITE;
+/*!40000 ALTER TABLE `Threading1` DISABLE KEYS */;
+INSERT INTO `Threading1` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `Threading1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ZZERIJIO`
+--
+
+DROP TABLE IF EXISTS `ZZERIJIO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ZZERIJIO` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ZZERIJIO`
+--
+
+LOCK TABLES `ZZERIJIO` WRITE;
+/*!40000 ALTER TABLE `ZZERIJIO` DISABLE KEYS */;
+INSERT INTO `ZZERIJIO` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `ZZERIJIO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth`
+--
+
+DROP TABLE IF EXISTS `auth`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pw_hash` binary(60) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth`
+--
+
+LOCK TABLES `auth` WRITE;
+/*!40000 ALTER TABLE `auth` DISABLE KEYS */;
+INSERT INTO `auth` VALUES
+(3,'alfred','$2b$12$gD7puQiuY01ePHPy7Gt/F.CtM26Sp4mBcciXcEOlURPECR7Ekq5aG',0),
+(4,'admin','$2b$12$DJdzqyOZUTLfUBvYIzL4QObCLKjOkhAzdcY5trIRDmDsUtE80LUqW',1),
+(5,'viewwer','$2b$12$LfvdTu2EVHw7aAQgSfHFsuqyjQ96zVQH5xsaojG7S0OJs6Ewiq6IC',2),
+(6,'student','$2b$12$Fih3RTMyAW2HDc8wb.oNZuh5ZfSQoULXKOpqgB2QsSMfv6.02gw0O',3),
+(7,'vvv','$2b$12$IRUe1zHBed3BQuyzY3lZ6udGkiAcZDcroODQc7EgIZcq2uqjy1406',1);
+/*!40000 ALTER TABLE `auth` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bbtnTest`
+--
+
+DROP TABLE IF EXISTS `bbtnTest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bbtnTest` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bbtnTest`
+--
+
+LOCK TABLES `bbtnTest` WRITE;
+/*!40000 ALTER TABLE `bbtnTest` DISABLE KEYS */;
+INSERT INTO `bbtnTest` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `bbtnTest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `courses_info`
+--
+
+DROP TABLE IF EXISTS `courses_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `courses_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `course` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `semesters` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `courses_info`
+--
+
+LOCK TABLES `courses_info` WRITE;
+/*!40000 ALTER TABLE `courses_info` DISABLE KEYS */;
+INSERT INTO `courses_info` VALUES
+(1,'MSc',4),
+(2,'BSc',6),
+(3,'MCA',4),
+(4,'MA',4),
+(5,'BA',6),
+(6,'MBA',4);
+/*!40000 ALTER TABLE `courses_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `departments`
+--
+
+DROP TABLE IF EXISTS `departments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `departments` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `depname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `courses` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `departments`
+--
+
+LOCK TABLES `departments` WRITE;
+/*!40000 ALTER TABLE `departments` DISABLE KEYS */;
+INSERT INTO `departments` VALUES
+(1,'Computer Science','MSc,BSc,MCA'),
+(2,'Physics','MSc,BSc,MCA'),
+(3,'Mathematics','MSc,BSc,MCA'),
+(4,'Chemistry','MSc,BSc,MCA'),
+(5,'Zoology','MSc,BSc,MCA'),
+(6,'Botany','MSc,BSc,MCA'),
+(7,'Psychology','MSc,BSc,MCA'),
+(8,'Economics','BA,MA');
+/*!40000 ALTER TABLE `departments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hyt54ewsxdcfghyujk`
+--
+
+DROP TABLE IF EXISTS `hyt54ewsxdcfghyujk`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hyt54ewsxdcfghyujk` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hyt54ewsxdcfghyujk`
+--
+
+LOCK TABLES `hyt54ewsxdcfghyujk` WRITE;
+/*!40000 ALTER TABLE `hyt54ewsxdcfghyujk` DISABLE KEYS */;
+INSERT INTO `hyt54ewsxdcfghyujk` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `hyt54ewsxdcfghyujk` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `i876543wsdfg`
+--
+
+DROP TABLE IF EXISTS `i876543wsdfg`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `i876543wsdfg` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `i876543wsdfg`
+--
+
+LOCK TABLES `i876543wsdfg` WRITE;
+/*!40000 ALTER TABLE `i876543wsdfg` DISABLE KEYS */;
+INSERT INTO `i876543wsdfg` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `i876543wsdfg` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jjakaka`
+--
+
+DROP TABLE IF EXISTS `jjakaka`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jjakaka` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jjakaka`
+--
+
+LOCK TABLES `jjakaka` WRITE;
+/*!40000 ALTER TABLE `jjakaka` DISABLE KEYS */;
+INSERT INTO `jjakaka` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `jjakaka` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mnhgtre32`
+--
+
+DROP TABLE IF EXISTS `mnhgtre32`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mnhgtre32` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mnhgtre32`
+--
+
+LOCK TABLES `mnhgtre32` WRITE;
+/*!40000 ALTER TABLE `mnhgtre32` DISABLE KEYS */;
+INSERT INTO `mnhgtre32` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `mnhgtre32` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qwertyuio`
+--
+
+DROP TABLE IF EXISTS `qwertyuio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `qwertyuio` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qwertyuio`
+--
+
+LOCK TABLES `qwertyuio` WRITE;
+/*!40000 ALTER TABLE `qwertyuio` DISABLE KEYS */;
+INSERT INTO `qwertyuio` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `qwertyuio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `result_links`
+--
+
+DROP TABLE IF EXISTS `result_links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `result_links` (
+  `id` binary(16) DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `result_links`
+--
+
+LOCK TABLES `result_links` WRITE;
+/*!40000 ALTER TABLE `result_links` DISABLE KEYS */;
+INSERT INTO `result_links` VALUES
+('2LkEëäÏäxÀÈ02i{','test1','1'),
+('2LtQëäÏäxÀÈ02i{','test1','2'),
+('2Lz¶ëäÏäxÀÈ02i{','test1','3'),
+('2LÄ*ëäÏäxÀÈ02i{','test1','4'),
+('2LÖ®ëäÏäxÀÈ02i{','test1','5'),
+('GÜAëäÏäxÀÈ02i{','test6','1'),
+('GÜS%ëäÏäxÀÈ02i{','test6','2'),
+('GÜ^ëäÏäxÀÈ02i{','test6','3'),
+('GÜiëäÏäxÀÈ02i{','test6','4'),
+('GÜoQëäÏäxÀÈ02i{','test6','5'),
+('„5M ëéÏäxÀÈ02i{','test2','1'),
+('„5[˚ëéÏäxÀÈ02i{','test2','2'),
+('„5hÄëéÏäxÀÈ02i{','test2','3'),
+('„5uëéÏäxÀÈ02i{','test2','4'),
+('„5Å≤ëéÏäxÀÈ02i{','test2','5'),
+('¸3çëèÏäxÀÈ02i{','test2','1'),
+('¸@ÅëèÏäxÀÈ02i{','test2','2'),
+('¸O•ëèÏäxÀÈ02i{','test2','3'),
+('¸WeëèÏäxÀÈ02i{','test2','4'),
+('¸]SëèÏäxÀÈ02i{','test2','5'),
+('~™˚ëèÏäxÀÈ02i{','test2','1'),
+('~ª!ëèÏäxÀÈ02i{','test2','2'),
+('~…yëèÏäxÀÈ02i{','test2','3'),
+('~÷_ëèÏäxÀÈ02i{','test2','4'),
+('~‡uëèÏäxÀÈ02i{','test2','5'),
+('zF¶}ëèÏäxÀÈ02i{','test2','1'),
+('zF∂æëèÏäxÀÈ02i{','test2','2'),
+('zFæûëèÏäxÀÈ02i{','test2','3'),
+('zFƒ∂ëèÏäxÀÈ02i{','test2','4'),
+('zFÀëèÏäxÀÈ02i{','test2','5'),
+(']Ù”¡ëêÏäxÀÈ02i{','test4','1'),
+(']Ù‡fëêÏäxÀÈ02i{','test4','2'),
+(']ÙÊÍëêÏäxÀÈ02i{','test4','3'),
+(']ÙÌëêÏäxÀÈ02i{','test4','4'),
+(']ÙÚªëêÏäxÀÈ02i{','test4','5'),
+('xéÊëêÏäxÀÈ02i{','test3','1'),
+('xé¸¯ëêÏäxÀÈ02i{','test3','2'),
+('xèFëêÏäxÀÈ02i{','test3','3'),
+('xèOëêÏäxÀÈ02i{','test3','4'),
+('xè∑ëêÏäxÀÈ02i{','test3','5'),
+('ù»ºÁëêÏäxÀÈ02i{','test69','1'),
+('ù»—?ëêÏäxÀÈ02i{','test69','2'),
+('ù»ﬂfëêÏäxÀÈ02i{','test69','3'),
+('ù»ÈœëêÏäxÀÈ02i{','test69','4'),
+('ù»ÙÉëêÏäxÀÈ02i{','test69','5'),
+('4)ÒëëÏäxÀÈ02i{','test5','1'),
+('46√ëëÏäxÀÈ02i{','test5','2'),
+('4DëëÏäxÀÈ02i{','test5','3'),
+('4RaëëÏäxÀÈ02i{','test5','4'),
+('4\\YëëÏäxÀÈ02i{','test5','5'),
+('ëù^ëÌÏäëÀÍ5HÃ&','sadsadasdadads','1'),
+('ëùvﬁëÌÏäëÀÍ5HÃ&','sadsadasdadads','2'),
+('ëù}ëÌÏäëÀÍ5HÃ&','sadsadasdadads','3'),
+('ëùÇ]ëÌÏäëÀÍ5HÃ&','sadsadasdadads','4'),
+('ëùáIëÌÏäëÀÍ5HÃ&','sadsadasdadads','5'),
+('ÔÖïﬁíÏäØÀÏ;dD)','BScCS2022Feb','1'),
+('ÔÖ™ÊíÏäØÀÏ;dD)','BScCS2022Feb','2'),
+('ÔÖ¥ˆíÏäØÀÏ;dD)','BScCS2022Feb','3'),
+('ÔÖ∫“íÏäØÀÏ;dD)','BScCS2022Feb','4'),
+('ÔÖ¿\0íÏäØÀÏ;dD)','BScCS2022Feb','5'),
+('¯&ùmíÏäØÀÏ;dD)','HELLO','1'),
+('¯&™‹íÏäØÀÏ;dD)','HELLO','2'),
+('¯&µ·íÏäØÀÏ;dD)','HELLO','3'),
+('¯&ºöíÏäØÀÏ;dD)','HELLO','4'),
+('¯&¡ÓíÏäØÀÏ;dD)','HELLO','5'),
+('bmF‹í\ZÏäØÀÏ;dD)','DX','1'),
+('bmN~í\ZÏäØÀÏ;dD)','DX','2'),
+('bmSøí\ZÏäØÀÏ;dD)','DX','3'),
+('bmX¶í\ZÏäØÀÏ;dD)','DX','4'),
+('bm]qí\ZÏäØÀÏ;dD)','DX','5'),
+('VbSKíÏäØÀÏ;dD)','ttest222','1'),
+('Vb]˝íÏäØÀÏ;dD)','ttest222','2'),
+('VbeJíÏäØÀÏ;dD)','ttest222','3'),
+('VbnKíÏäØÀÏ;dD)','ttest222','4'),
+('Vbv8íÏäØÀÏ;dD)','ttest222','5'),
+('ºÿ@èíÏäØÀÏ;dD)','Helloooooo','1'),
+('ºÿNXíÏäØÀÏ;dD)','Helloooooo','2'),
+('ºÿWíÏäØÀÏ;dD)','Helloooooo','3'),
+('ºÿ_ÎíÏäØÀÏ;dD)','Helloooooo','4'),
+('ºÿeuíÏäØÀÏ;dD)','Helloooooo','5'),
+('ºÿjÄíÏäØÀÏ;dD)','Helloooooo','6'),
+('ºÿp=íÏäØÀÏ;dD)','Helloooooo','7'),
+('ºÿwªíÏäØÀÏ;dD)','Helloooooo','8'),
+('ºÿˇíÏäØÀÏ;dD)','Helloooooo','9'),
+('ºÿáåíÏäØÀÏ;dD)','Helloooooo','10'),
+('ºÿí<íÏäØÀÏ;dD)','Helloooooo','11'),
+('ºÿú…íÏäØÀÏ;dD)','Helloooooo','12'),
+('ºÿ¶õíÏäØÀÏ;dD)','Helloooooo','13'),
+('ºÿ≠íÏäØÀÏ;dD)','Helloooooo','14'),
+('ºÿ≤PíÏäØÀÏ;dD)','Helloooooo','16'),
+('ı°ùwíÏäØÀÏ;dD)','qwertyuio','1'),
+('ı°´^íÏäØÀÏ;dD)','qwertyuio','2'),
+('ı°¥íÏäØÀÏ;dD)','qwertyuio','3'),
+('ı°º¡íÏäØÀÏ;dD)','qwertyuio','4'),
+('ı°≈…íÏäØÀÏ;dD)','qwertyuio','5'),
+('ı°Ã†íÏäØÀÏ;dD)','qwertyuio','6'),
+('ı°“íÏäØÀÏ;dD)','qwertyuio','7'),
+('ı°◊?íÏäØÀÏ;dD)','qwertyuio','8'),
+('ı°‹^íÏäØÀÏ;dD)','qwertyuio','9'),
+('ı°·PíÏäØÀÏ;dD)','qwertyuio','10'),
+('ı°ÊEíÏäØÀÏ;dD)','qwertyuio','11'),
+('ı°ÎíÏäØÀÏ;dD)','qwertyuio','12'),
+('ı°íÏäØÀÏ;dD)','qwertyuio','13'),
+('ı°ı≠íÏäØÀÏ;dD)','qwertyuio','14'),
+('ı°˙|íÏäØÀÏ;dD)','qwertyuio','16'),
+('”\\ë–íÏäØÀÏ;dD)','jjakaka','1'),
+('”\\úÿíÏäØÀÏ;dD)','jjakaka','2'),
+('”\\£MíÏäØÀÏ;dD)','jjakaka','3'),
+('”\\®}íÏäØÀÏ;dD)','jjakaka','4'),
+('”\\ÆíÏäØÀÏ;dD)','jjakaka','5'),
+('”\\≥\ZíÏäØÀÏ;dD)','jjakaka','6'),
+('”\\∏líÏäØÀÏ;dD)','jjakaka','7'),
+('”\\ΩßíÏäØÀÏ;dD)','jjakaka','8'),
+('”\\¬’íÏäØÀÏ;dD)','jjakaka','9'),
+('”\\«˘íÏäØÀÏ;dD)','jjakaka','10'),
+('”\\ÕíÏäØÀÏ;dD)','jjakaka','11'),
+('”\\“∂íÏäØÀÏ;dD)','jjakaka','12'),
+('”\\ÿíÏäØÀÏ;dD)','jjakaka','13'),
+('”\\›ÜíÏäØÀÏ;dD)','jjakaka','14'),
+('”\\Ê”íÏäØÀÏ;dD)','jjakaka','16'),
+('ãÃöÈíÏäØÀÏ;dD)','PLSWOrkD','1'),
+('ãÃ©7íÏäØÀÏ;dD)','PLSWOrkD','2'),
+('ãÃ∑4íÏäØÀÏ;dD)','PLSWOrkD','3'),
+('ãÃƒíÏäØÀÏ;dD)','PLSWOrkD','4'),
+('ãÃŒ=íÏäØÀÏ;dD)','PLSWOrkD','5'),
+('ãÃ◊}íÏäØÀÏ;dD)','PLSWOrkD','6'),
+('ãÃ‚xíÏäØÀÏ;dD)','PLSWOrkD','7'),
+('ãÃÎÛíÏäØÀÏ;dD)','PLSWOrkD','8'),
+('ãÃÚ„íÏäØÀÏ;dD)','PLSWOrkD','9'),
+('ãÃ¯5íÏäØÀÏ;dD)','PLSWOrkD','10'),
+('ãÃˇ}íÏäØÀÏ;dD)','PLSWOrkD','11'),
+('ãÕ\n&íÏäØÀÏ;dD)','PLSWOrkD','12'),
+('ãÕ.íÏäØÀÏ;dD)','PLSWOrkD','13'),
+('ãÕíÏäØÀÏ;dD)','PLSWOrkD','14'),
+('ãÕõíÏäØÀÏ;dD)','PLSWOrkD','16'),
+('ın$ıí#ÏäØÀÏ;dD)','Threading1','1'),
+('ıoSöí#ÏäØÀÏ;dD)','Threading1','2'),
+('ıo\\˘í#ÏäØÀÏ;dD)','Threading1','3'),
+('ıofí#ÏäØÀÏ;dD)','Threading1','4'),
+('ıomëí#ÏäØÀÏ;dD)','Threading1','5'),
+('ıov\Zí#ÏäØÀÏ;dD)','Threading1','6'),
+('ıo|í#ÏäØÀÏ;dD)','Threading1','7'),
+('ıoÇ8í#ÏäØÀÏ;dD)','Threading1','8'),
+('ıoâÒí#ÏäØÀÏ;dD)','Threading1','9'),
+('ıoìîí#ÏäØÀÏ;dD)','Threading1','10'),
+('ıoüií#ÏäØÀÏ;dD)','Threading1','11'),
+('ıo™íí#ÏäØÀÏ;dD)','Threading1','12'),
+('ıo¥üí#ÏäØÀÏ;dD)','Threading1','13'),
+('ıoøí#ÏäØÀÏ;dD)','Threading1','14'),
+('ıo≈œí#ÏäØÀÏ;dD)','Threading1','16'),
+('ã√»í$ÏäØÀÏ;dD)','thread2','1'),
+('ãƒ˘ í$ÏäØÀÏ;dD)','thread2','2'),
+('ã≈“í$ÏäØÀÏ;dD)','thread2','3'),
+('ã≈≈í$ÏäØÀÏ;dD)','thread2','4'),
+('ã≈wí$ÏäØÀÏ;dD)','thread2','5'),
+('ã≈)2í$ÏäØÀÏ;dD)','thread2','6'),
+('ã≈2Öí$ÏäØÀÏ;dD)','thread2','7'),
+('ã≈;äí$ÏäØÀÏ;dD)','thread2','8'),
+('ã≈A/í$ÏäØÀÏ;dD)','thread2','9'),
+('ã≈FYí$ÏäØÀÏ;dD)','thread2','10'),
+('ã≈Pí$ÏäØÀÏ;dD)','thread2','11'),
+('ã≈U‰í$ÏäØÀÏ;dD)','thread2','12'),
+('ã≈[ªí$ÏäØÀÏ;dD)','thread2','13'),
+('ã≈cí$ÏäØÀÏ;dD)','thread2','14'),
+('ã≈h)í$ÏäØÀÏ;dD)','thread2','16'),
+('öv⁄í%ÏäØÀÏ;dD)','bbtnTest','1'),
+('öwPí%ÏäØÀÏ;dD)','bbtnTest','2'),
+('öwVèí%ÏäØÀÏ;dD)','bbtnTest','3'),
+('öw[ºí%ÏäØÀÏ;dD)','bbtnTest','4'),
+('öwaˆí%ÏäØÀÏ;dD)','bbtnTest','5'),
+('öwg\'í%ÏäØÀÏ;dD)','bbtnTest','6'),
+('öwp{í%ÏäØÀÏ;dD)','bbtnTest','7'),
+('öwz8í%ÏäØÀÏ;dD)','bbtnTest','8'),
+('öwÄí%ÏäØÀÏ;dD)','bbtnTest','9'),
+('öwÖpí%ÏäØÀÏ;dD)','bbtnTest','10'),
+('öwåbí%ÏäØÀÏ;dD)','bbtnTest','11'),
+('öwïí%ÏäØÀÏ;dD)','bbtnTest','12'),
+('öwöºí%ÏäØÀÏ;dD)','bbtnTest','13'),
+('öwü—í%ÏäØÀÏ;dD)','bbtnTest','14'),
+('öw•í%ÏäØÀÏ;dD)','bbtnTest','16'),
+('>‚OUí&ÏäØÀÏ;dD)','12345678QWERTY','1'),
+('>„Ö[í&ÏäØÀÏ;dD)','12345678QWERTY','2'),
+('>„é˛í&ÏäØÀÏ;dD)','12345678QWERTY','3'),
+('>„ñ3í&ÏäØÀÏ;dD)','12345678QWERTY','4'),
+('>„õLí&ÏäØÀÏ;dD)','12345678QWERTY','5'),
+('>„†.í&ÏäØÀÏ;dD)','12345678QWERTY','6'),
+('>„•gí&ÏäØÀÏ;dD)','12345678QWERTY','7'),
+('>„¨&í&ÏäØÀÏ;dD)','12345678QWERTY','8'),
+('>„µ-í&ÏäØÀÏ;dD)','12345678QWERTY','9'),
+('>„æí&ÏäØÀÏ;dD)','12345678QWERTY','10'),
+('>„√®í&ÏäØÀÏ;dD)','12345678QWERTY','11'),
+('>„»–í&ÏäØÀÏ;dD)','12345678QWERTY','12'),
+('>„ŒPí&ÏäØÀÏ;dD)','12345678QWERTY','13'),
+('>„‘í&ÏäØÀÏ;dD)','12345678QWERTY','14'),
+('>„Ÿ.í&ÏäØÀÏ;dD)','12345678QWERTY','16'),
+('Û#hí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','1'),
+('ÙRHí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','2'),
+('ÙXªí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','3'),
+('Ù]ﬁí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','4'),
+('ÙcÑí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','5'),
+('Ùh}í\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','6'),
+('Ùm£í\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','7'),
+('Ùr∞í\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','8'),
+('Ùwßí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','9'),
+('Ù|úí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','10'),
+('ÙÅåí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','11'),
+('ÙÜwí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','12'),
+('Ùå}í\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','13'),
+('Ùë¥í\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','14'),
+('Ùñºí\'ÏäØÀÏ;dD)','rettttttttttttttttttttttttt','16'),
+('V\0πÖí\'ÏäØÀÏ;dD)','mnhgtre32','1'),
+('VËtí\'ÏäØÀÏ;dD)','mnhgtre32','2'),
+('VÓÿí\'ÏäØÀÏ;dD)','mnhgtre32','3'),
+('VÛ¯í\'ÏäØÀÏ;dD)','mnhgtre32','4'),
+('V¯⁄í\'ÏäØÀÏ;dD)','mnhgtre32','5'),
+('VÉí\'ÏäØÀÏ;dD)','mnhgtre32','6'),
+('V:í\'ÏäØÀÏ;dD)','mnhgtre32','7'),
+('Ví\'ÏäØÀÏ;dD)','mnhgtre32','8'),
+('VQí\'ÏäØÀÏ;dD)','mnhgtre32','9'),
+('V!9í\'ÏäØÀÏ;dD)','mnhgtre32','10'),
+('V&íí\'ÏäØÀÏ;dD)','mnhgtre32','11'),
+('V+§í\'ÏäØÀÏ;dD)','mnhgtre32','12'),
+('V0dí\'ÏäØÀÏ;dD)','mnhgtre32','13'),
+('V=Íí\'ÏäØÀÏ;dD)','mnhgtre32','14'),
+('VHFí\'ÏäØÀÏ;dD)','mnhgtre32','16'),
+('pg≈í\'ÏäØÀÏ;dD)','i876543wsdfg','1'),
+('ph˙fí\'ÏäØÀÏ;dD)','i876543wsdfg','2'),
+('piuí\'ÏäØÀÏ;dD)','i876543wsdfg','3'),
+('piâí\'ÏäØÀÏ;dD)','i876543wsdfg','4'),
+('pi€í\'ÏäØÀÏ;dD)','i876543wsdfg','5'),
+('pi!Ní\'ÏäØÀÏ;dD)','i876543wsdfg','6'),
+('pi&éí\'ÏäØÀÏ;dD)','i876543wsdfg','7'),
+('pi,,í\'ÏäØÀÏ;dD)','i876543wsdfg','8'),
+('pi11í\'ÏäØÀÏ;dD)','i876543wsdfg','9'),
+('pi85í\'ÏäØÀÏ;dD)','i876543wsdfg','10'),
+('pi@hí\'ÏäØÀÏ;dD)','i876543wsdfg','11'),
+('piE¿í\'ÏäØÀÏ;dD)','i876543wsdfg','12'),
+('piJ¶í\'ÏäØÀÏ;dD)','i876543wsdfg','13'),
+('piOoí\'ÏäØÀÏ;dD)','i876543wsdfg','14'),
+('piTÍí\'ÏäØÀÏ;dD)','i876543wsdfg','16'),
+('è:ìí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','1'),
+('è:ûDí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','2'),
+('è:ßí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','3'),
+('è:¨Öí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','4'),
+('è:±gí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','5'),
+('è:∂í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','6'),
+('è:ª±í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','7'),
+('è:¡\ní\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','8'),
+('è: Hí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','9'),
+('è:–í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','10'),
+('è:˛{í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','11'),
+('è;±í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','12'),
+('è;Òí\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','13'),
+('è;#í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','14'),
+('è;&÷í\'ÏäØÀÏ;dD)','hyt54ewsxdcfghyujk','16'),
+('\Zê»í(ÏäØÀÏ;dD)','ZZERIJIO','1'),
+('\ZÀJí(ÏäØÀÏ;dD)','ZZERIJIO','2'),
+('\Z’êí(ÏäØÀÏ;dD)','ZZERIJIO','3'),
+('\Z›ºí(ÏäØÀÏ;dD)','ZZERIJIO','4'),
+('\ZË í(ÏäØÀÏ;dD)','ZZERIJIO','5'),
+('\ZÛí(ÏäØÀÏ;dD)','ZZERIJIO','6'),
+('\Zˇäí(ÏäØÀÏ;dD)','ZZERIJIO','7'),
+('\Z	Tí(ÏäØÀÏ;dD)','ZZERIJIO','8'),
+('\Z\\í(ÏäØÀÏ;dD)','ZZERIJIO','9'),
+('\Z≈í(ÏäØÀÏ;dD)','ZZERIJIO','10'),
+('\Z\Z”í(ÏäØÀÏ;dD)','ZZERIJIO','11'),
+('\Z\"Õí(ÏäØÀÏ;dD)','ZZERIJIO','12'),
+('\Z)<í(ÏäØÀÏ;dD)','ZZERIJIO','13'),
+('\Z0çí(ÏäØÀÏ;dD)','ZZERIJIO','14'),
+('\Z6ií(ÏäØÀÏ;dD)','ZZERIJIO','16'),
+('ò\0¢kí(ÏäØÀÏ;dD)','vfrfffffff','1'),
+('ò\0∫˛í(ÏäØÀÏ;dD)','vfrfffffff','2'),
+('ò\0∆Ví(ÏäØÀÏ;dD)','vfrfffffff','3'),
+('ò\0œ±í(ÏäØÀÏ;dD)','vfrfffffff','4'),
+('ò\0÷≥í(ÏäØÀÏ;dD)','vfrfffffff','5'),
+('ò\0›í(ÏäØÀÏ;dD)','vfrfffffff','6'),
+('ò\0„!í(ÏäØÀÏ;dD)','vfrfffffff','7'),
+('ò\0ËAí(ÏäØÀÏ;dD)','vfrfffffff','8'),
+('ò˝í(ÏäØÀÏ;dD)','vfrfffffff','9'),
+('ò9í(ÏäØÀÏ;dD)','vfrfffffff','10'),
+('ò\"“í(ÏäØÀÏ;dD)','vfrfffffff','11'),
+('ò(]í(ÏäØÀÏ;dD)','vfrfffffff','12'),
+('ò-Øí(ÏäØÀÏ;dD)','vfrfffffff','13'),
+('ò2πí(ÏäØÀÏ;dD)','vfrfffffff','14'),
+('ò7ªí(ÏäØÀÏ;dD)','vfrfffffff','16'),
+('«ÌtÓí(ÏäØÀÏ;dD)','765432qasxdfghj','1'),
+('«Óù‡í(ÏäØÀÏ;dD)','765432qasxdfghj','2'),
+('«ÓßTí(ÏäØÀÏ;dD)','765432qasxdfghj','3'),
+('«Ó∞0í(ÏäØÀÏ;dD)','765432qasxdfghj','4'),
+('«Ó∏í(ÏäØÀÏ;dD)','765432qasxdfghj','5'),
+('«Ó¿êí(ÏäØÀÏ;dD)','765432qasxdfghj','6'),
+('«ÓÃí(ÏäØÀÏ;dD)','765432qasxdfghj','7'),
+('«Ó“ﬁí(ÏäØÀÏ;dD)','765432qasxdfghj','8'),
+('«Óÿ1í(ÏäØÀÏ;dD)','765432qasxdfghj','9'),
+('«Ó›5í(ÏäØÀÏ;dD)','765432qasxdfghj','10'),
+('«Ó‚3í(ÏäØÀÏ;dD)','765432qasxdfghj','11'),
+('«ÓÁ®í(ÏäØÀÏ;dD)','765432qasxdfghj','12'),
+('«ÓÏæí(ÏäØÀÏ;dD)','765432qasxdfghj','13'),
+('«ÓÒëí(ÏäØÀÏ;dD)','765432qasxdfghj','14'),
+('«Óˆií(ÏäØÀÏ;dD)','765432qasxdfghj','16'),
+('{Ã(íZÏäØÀÏ;dD)','TTTTTTTTT','1'),
+('{Õ{˛íZÏäØÀÏ;dD)','TTTTTTTTT','2'),
+('{ÕÉîíZÏäØÀÏ;dD)','TTTTTTTTT','3'),
+('{ÕåíZÏäØÀÏ;dD)','TTTTTTTTT','4'),
+('{ÕéKíZÏäØÀÏ;dD)','TTTTTTTTT','5'),
+('{ÕêfíZÏäØÀÏ;dD)','TTTTTTTTT','6'),
+('{Õí¨íZÏäØÀÏ;dD)','TTTTTTTTT','7'),
+('{ÕîÍíZÏäØÀÏ;dD)','TTTTTTTTT','8'),
+('{Õó\'íZÏäØÀÏ;dD)','TTTTTTTTT','9'),
+('{ÕôÌíZÏäØÀÏ;dD)','TTTTTTTTT','10'),
+('{Õù>íZÏäØÀÏ;dD)','TTTTTTTTT','11'),
+('{Õ¢\0íZÏäØÀÏ;dD)','TTTTTTTTT','12'),
+('{Õ§≤íZÏäØÀÏ;dD)','TTTTTTTTT','13'),
+('{Õ¶˛íZÏäØÀÏ;dD)','TTTTTTTTT','14'),
+('{Õ©=íZÏäØÀÏ;dD)','TTTTTTTTT','16'),
+('Ä∏zòìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','1'),
+('Ä∏ë ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','2'),
+('Ä∏ñ˝ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','3'),
+('Ä∏õ2ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','4'),
+('Ä∏ü{ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','5'),
+('Ä∏¢ÕìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','6'),
+('Ä∏¶&ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','7'),
+('Ä∏©[ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','8'),
+('Ä∏¨öìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','9'),
+('Ä∏ØÿìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','10'),
+('Ä∏≥ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','11'),
+('Ä∏∂7ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','12'),
+('Ä∏πnìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','13'),
+('Ä∏ºõìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','14'),
+('Ä∏¿	ìQÏå™—¶3\nô','MCA_Computer_Science_S2_2022_02_01','16'),
+('!DÀiìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','1'),
+('!E˝ÁìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','2'),
+('!F’ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','3'),
+('!F„ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','4'),
+('!F	eìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','5'),
+('!F°ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','6'),
+('!FìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','7'),
+('!F\\ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','8'),
+('!FÑìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','9'),
+('!F–ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','10'),
+('!FìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','11'),
+('!FìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','12'),
+('!F!ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','13'),
+('!F%ìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','14'),
+('!F(tìUÏå™—¶3\nô','MSc_Computer_Science_S1_2022_02_01','16'),
+('u_ÔìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','1'),
+('uè.ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','2'),
+('uï.ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','3'),
+('uö3ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','4'),
+('uüxìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','5'),
+('u¢‹ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','6'),
+('u¶LìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','7'),
+('u©¥ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','8'),
+('u¨˙ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','9'),
+('u∞:ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','10'),
+('u≥}ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','11'),
+('u∂´ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','12'),
+('uπ‚ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','13'),
+('uΩ	ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','14'),
+('u¿»ìUÏå™—¶3\nô','MCA_Physics_S2_2022_02_21','16'),
+('B∞“…ìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','1'),
+('B∞ˇzìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','2'),
+('B±ΩìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','3'),
+('B±\rìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','4'),
+('B±ˇìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','5'),
+('B±‘ìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','6'),
+('B±ÕìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','7'),
+('B± ΩìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','8'),
+('B±&|ìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','9'),
+('B±+vìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','10'),
+('B±0OìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','11'),
+('B±56ìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','12'),
+('B±:ìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','13'),
+('B±>ﬂìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','14'),
+('B±C≤ìsÏå™—¶3\nô','MA_Economics_S1_2022_02_16','16'),
+('©K˘”ìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','1'),
+('©M=ƒìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','2'),
+('©MHBìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','3'),
+('©MQ¯ìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','4'),
+('©M];ìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','5'),
+('©MdìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','6'),
+('©MiÈìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','7'),
+('©MofìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','8'),
+('©MtÌìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','9'),
+('©Mz/ìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','10'),
+('©N»ËìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','11'),
+('©N‘*ìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','12'),
+('©NﬁVìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','13'),
+('©NÁ0ìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','14'),
+('©NbìtÏå™—¶3\nô','BSc_Mathematics_S1_2022_02_01','16'),
+('±œiìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','1'),
+('±∂ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','2'),
+('±-ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','3'),
+('±}ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','4'),
+('±SìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','5'),
+('±#dìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','6'),
+('±(ÃìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','7'),
+('±.ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','8'),
+('±3%ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','9'),
+('±8$ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','10'),
+('±=ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','11'),
+('±CrìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','12'),
+('±MìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','13'),
+('±U·ìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','14'),
+('±[îìtÏå™—¶3\nô','BSc_Computer_Science_S6_2022_02_08','16'),
+('Œ)≠ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','1'),
+('Œ*·ÚìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','2'),
+('Œ*ÎìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','3'),
+('Œ*ÙÀìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','4'),
+('Œ*˙kìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','5'),
+('Œ*ˇÄìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','6'),
+('Œ+ΩìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','7'),
+('Œ+	ÎìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','8'),
+('Œ+‡ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','9'),
+('Œ+ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','10'),
+('Œ+\ZìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','11'),
+('Œ+!ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','12'),
+('Œ+$.ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','13'),
+('Œ+)0ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','14'),
+('Œ+.%ìtÏå™—¶3\nô','BSc_Mathematics_S4_2022_02_28','16'),
+('Ú\'‰?ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','1'),
+('Ú)\'ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','2'),
+('Ú)4ŒìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','3'),
+('Ú)?}ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','4'),
+('Ú)K⁄ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','5'),
+('Ú)U‚ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','6'),
+('Ú)_zìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','7'),
+('Ú)e`ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','8'),
+('Ú)k£ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','9'),
+('Ú)p˛ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','10'),
+('Ú)vìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','11'),
+('Ú){&ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','12'),
+('Ú)Ä*ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','13'),
+('Ú)Ö,ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','14'),
+('Ú)ä*ìuÏå™—¶3\nô','BSc_Physics_S3_2022_02_07','16'),
+('h8“≥ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','1'),
+('h8Ê„ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','2'),
+('h8ÏÚìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','3'),
+('h8ÚAìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','4'),
+('h8˜8ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','5'),
+('h8¸2ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','6'),
+('h9pìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','7'),
+('h9°ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','8'),
+('h9≥ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','9'),
+('h9”ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','10'),
+('h9©ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','11'),
+('h9ÕìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','12'),
+('h9 ÌìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','13'),
+('h9&?ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','14'),
+('h9+ìyÏå™—¶3\nô','MSc_Psychology_S3_2022_02_08','16');
+/*!40000 ALTER TABLE `result_links` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `results`
+--
+
+DROP TABLE IF EXISTS `results`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `results` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subjects` varchar(350) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `uploadDate` date DEFAULT NULL,
+  `emailSent` tinyint(1) DEFAULT 0,
+  `depID` int(11) DEFAULT NULL,
+  `courseID` int(11) DEFAULT NULL,
+  `semester` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `results`
+--
+
+LOCK TABLES `results` WRITE;
+/*!40000 ALTER TABLE `results` DISABLE KEYS */;
+INSERT INTO `results` VALUES
+(45,'MSc_Physics_S4_2023_04_05','English,Maths,Physics,Computer Science','2022-02-22',0,2,1,NULL),
+(46,'MSc_Computer_Science_S1_2022_02_01','English,Maths,Physics,Computer Science','2022-02-22',1,1,1,NULL),
+(47,'MCA_Computer_Science_S2_2022_02_01','English,Maths,Physics,Computer Science','2022-02-22',1,1,3,2),
+(48,'MSc_Psychology_S3_2022_02_08','English,Maths,Physics,Computer Science','2022-02-22',1,7,1,3),
+(49,'BSc_Computer_Science_S6_2022_02_08','English,Maths,Physics,Computer Science','2022-02-22',1,1,2,6),
+(50,'BSc_Mathematics_S4_2022_02_28','English,Maths,Physics,Computer Science','2022-02-22',1,3,2,4),
+(51,'BSc_Physics_S3_2022_02_07','English,Maths,Physics,Computer Science','2022-02-22',1,2,2,3),
+(52,'MA_Economics_S3_2022_02_09','English,Maths,Physics,Computer Science','2022-02-22',0,8,4,3),
+(53,'BSc_Mathematics_S1_2022_02_01','English,Maths,Physics,Computer Science','2022-02-22',1,3,2,1),
+(54,'MCA_Physics_S2_2022_02_21','English,Maths,Physics,Computer Science','2022-02-22',1,2,3,2),
+(55,'MSc_Botany_S1_2022_02_02','English,Maths,Physics,Computer Science','2022-02-22',0,6,1,1),
+(56,'MA_Economics_S1_2022_02_01','English,Maths,Physics,Computer Science','2022-02-22',0,8,4,1),
+(57,'MA_Economics_S1_2022_02_16','English,Maths,Physics,Computer Science','2022-02-22',1,8,4,1),
+(58,'MCA_Chemistry_S3_2022_02_10','English,Maths,Physics,Computer Science','2022-02-23',0,4,3,3),
+(59,'BSc_Botany_S5_2022_02_13','English,Maths,Physics,Computer Science','2022-02-24',0,6,2,5),
+(60,'MCA_Botany_S2_2022_02_08','English,Maths,Physics,Computer Science','2022-02-24',0,6,3,2),
+(61,'MSc_Mathematics_S3_2022_03_01','English,Maths,Physics,Computer Science','2022-03-03',0,3,1,3),
+(62,'MCA_Mathematics_S3_2022_03_24','English,Maths,Physics,Computer Science','2022-03-03',0,3,3,3),
+(63,'BA_Economics_S5_2022_03_23','English,Maths,Physics,Computer Science','2022-03-07',0,8,5,5);
+/*!40000 ALTER TABLE `results` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rettttttttttttttttttttttttt`
+--
+
+DROP TABLE IF EXISTS `rettttttttttttttttttttttttt`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rettttttttttttttttttttttttt` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rettttttttttttttttttttttttt`
+--
+
+LOCK TABLES `rettttttttttttttttttttttttt` WRITE;
+/*!40000 ALTER TABLE `rettttttttttttttttttttttttt` DISABLE KEYS */;
+INSERT INTO `rettttttttttttttttttttttttt` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `rettttttttttttttttttttttttt` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sadsadasdadads`
+--
+
+DROP TABLE IF EXISTS `sadsadasdadads`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sadsadasdadads` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sadsadasdadads`
+--
+
+LOCK TABLES `sadsadasdadads` WRITE;
+/*!40000 ALTER TABLE `sadsadasdadads` DISABLE KEYS */;
+INSERT INTO `sadsadasdadads` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',1);
+/*!40000 ALTER TABLE `sadsadasdadads` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test1`
+--
+
+DROP TABLE IF EXISTS `test1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test1` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test1`
+--
+
+LOCK TABLES `test1` WRITE;
+/*!40000 ALTER TABLE `test1` DISABLE KEYS */;
+INSERT INTO `test1` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,1),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',1),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test2`
+--
+
+DROP TABLE IF EXISTS `test2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test2` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test2`
+--
+
+LOCK TABLES `test2` WRITE;
+/*!40000 ALTER TABLE `test2` DISABLE KEYS */;
+INSERT INTO `test2` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test3`
+--
+
+DROP TABLE IF EXISTS `test3`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test3` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test3`
+--
+
+LOCK TABLES `test3` WRITE;
+/*!40000 ALTER TABLE `test3` DISABLE KEYS */;
+INSERT INTO `test3` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test3` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test4`
+--
+
+DROP TABLE IF EXISTS `test4`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test4` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test4`
+--
+
+LOCK TABLES `test4` WRITE;
+/*!40000 ALTER TABLE `test4` DISABLE KEYS */;
+INSERT INTO `test4` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test5`
+--
+
+DROP TABLE IF EXISTS `test5`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test5` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test5`
+--
+
+LOCK TABLES `test5` WRITE;
+/*!40000 ALTER TABLE `test5` DISABLE KEYS */;
+INSERT INTO `test5` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test5` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test6`
+--
+
+DROP TABLE IF EXISTS `test6`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test6` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test6`
+--
+
+LOCK TABLES `test6` WRITE;
+/*!40000 ALTER TABLE `test6` DISABLE KEYS */;
+INSERT INTO `test6` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test6` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test69`
+--
+
+DROP TABLE IF EXISTS `test69`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test69` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test69`
+--
+
+LOCK TABLES `test69` WRITE;
+/*!40000 ALTER TABLE `test69` DISABLE KEYS */;
+INSERT INTO `test69` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `test69` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `thread2`
+--
+
+DROP TABLE IF EXISTS `thread2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `thread2` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `thread2`
+--
+
+LOCK TABLES `thread2` WRITE;
+/*!40000 ALTER TABLE `thread2` DISABLE KEYS */;
+INSERT INTO `thread2` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `thread2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ttest222`
+--
+
+DROP TABLE IF EXISTS `ttest222`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ttest222` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ttest222`
+--
+
+LOCK TABLES `ttest222` WRITE;
+/*!40000 ALTER TABLE `ttest222` DISABLE KEYS */;
+INSERT INTO `ttest222` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13',NULL,0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21.0',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20.0',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19.0',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18.0',0);
+/*!40000 ALTER TABLE `ttest222` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vfrfffffff`
+--
+
+DROP TABLE IF EXISTS `vfrfffffff`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vfrfffffff` (
+  `SI_No` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `English` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Maths` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Physics` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Computer_Science` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emailRead` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vfrfffffff`
+--
+
+LOCK TABLES `vfrfffffff` WRITE;
+/*!40000 ALTER TABLE `vfrfffffff` DISABLE KEYS */;
+INSERT INTO `vfrfffffff` VALUES
+('1','AJ','alfredjophy@gmail.com','10','12','13','42',0),
+('2','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('3','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('4','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('5','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('6','AJ','alfredjophy@gmail.com','10','12','13','21',0),
+('7','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('8','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('9','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('10','ML','alfredjophy@gmail.com','10','10','17','18',0),
+('11','AJ','alfredjophy@gmail.com','10','12','13','32',0),
+('12','HW','alfredjophy@gmail.com','10','11','14','21',0),
+('13','CO','alfredjophy@gmail.com','10','10','15','20',0),
+('14','TK','alfredjophy@gmail.com','10','10','16','19',0),
+('16','ML','alfredjophy@gmail.com','10','10','17','18',0);
+/*!40000 ALTER TABLE `vfrfffffff` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-03-11 13:19:09

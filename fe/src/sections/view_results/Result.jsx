@@ -3,8 +3,8 @@ import { useResultQuery, useSendMailQuery } from "../../queries";
 import { useState, useEffect } from "react";
 import style from "./Result.module.css";
 import generatePDF from "../../utils/pdf";
-import {TiTick} from "react-icons/ti";
-import {RiCloseLine} from "react-icons/ri"
+import { TiTick } from "react-icons/ti";
+import { RiCloseLine } from "react-icons/ri";
 
 const Results = () => {
     let { rname } = useParams();
@@ -13,7 +13,9 @@ const Results = () => {
     const results = useResultQuery(rname, {
         onSuccess: (data) => setButton(!data.resultInfo.emailSent),
     });
-    const sendEmail = useSendMailQuery({ onSuccess: () => setButton(false) });
+    const sendEmail = useSendMailQuery(rname, {
+        onSuccess: () => setButton(false),
+    });
 
     const printResult = (d) => {
         const data = d.data.records.map((r) => {
@@ -34,6 +36,7 @@ const Results = () => {
                 <button
                     className={style.send}
                     onClick={() => {
+                        console.log(rname);
                         sendEmail.mutate(rname);
                         setButton(() => false);
                     }}
@@ -70,7 +73,13 @@ const Results = () => {
                             {results.data.resultInfo.subjects.map((s) => (
                                 <td>{e[s.replace(" ", "_")]}</td>
                             ))}
-                            <td>{e.emailRead ? <TiTick className={style.tick}/> : <RiCloseLine className={style.close}/>}</td>
+                            <td>
+                                {e.emailRead ? (
+                                    <TiTick className={style.tick} />
+                                ) : (
+                                    <RiCloseLine className={style.close} />
+                                )}
+                            </td>
                         </tr>
                     ))}
                 </tbody>

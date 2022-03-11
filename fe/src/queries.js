@@ -1,6 +1,6 @@
 import { useQuery, useMutation } from "react-query";
 
-const BASE_URL = "http://localhost:5050/api";
+const BASE_URL = "http://resultmails.jijuamathew.in/api";
 
 async function getResult(rname) {
     const response = await fetch(`${BASE_URL}/results/${rname}`, {
@@ -37,7 +37,7 @@ async function sendMail(rname) {
     return data;
 }
 
-export const useSendMailQuery = (settings) =>
+export const useSendMailQuery = (rname, settings) =>
     useMutation(() => sendMail(rname), settings);
 
 async function getDepartments() {
