@@ -7,6 +7,7 @@ import {
 } from "../../queries";
 import { Link } from "react-router-dom";
 import style from "./Department.module.css";
+import { resultPrettyName } from "../../utils/resultPrettyName";
 
 const StatsBar = ({ total, truths }) => {
     return (
@@ -30,7 +31,7 @@ const ResultPreview = (props) => {
     return (
         <div>
             <Link className={style.link} to={`/results/${props.rname}`}>
-                {props.rname}
+                {resultPrettyName(props.rname)}
             </Link>
             {stats.data.emailSent && (
                 <StatsBar

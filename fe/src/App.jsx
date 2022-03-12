@@ -32,10 +32,11 @@ function App() {
             setLoginStatus(() => data.loginStatus);
             if (data.loginStatus && isLoggedIn === null) {
                 setUser(() => data);
-                navigate("/dashboard");
+                navigate("/");
             }
         },
     });
+    useEffect(() => isLoggedIn === false && navigate("/login"), [isLoggedIn]);
 
     if (getloginStatus.isLoading) return <h1>Loading</h1>;
 
@@ -43,12 +44,12 @@ function App() {
         <>
             <Routes>
                 <Route
-                    path="/"
+                    path="/login"
                     element={<Login setLoginStatus={setLoginStatus} />}
                 />
                 <Route path="/student/result/:id" element={<StudentResult />} />
                 <Route element={isLoggedIn ? <Admin /> : <Restricted />}>
-                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/" element={<Dashboard />} />
                     <Route
                         path="/departments/:dname"
                         element={<Department />}

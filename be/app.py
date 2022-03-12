@@ -137,7 +137,7 @@ def sendmail(resultName):
         return jsonify({'error':'email already sent'}),415
     records = result['records']
     linkIDs = db.add_uuid_link(records,resultName)
-    send_email('Subject',records,linkIDs,resultName) 
+    send_email('Internal Exam Result',records,linkIDs,resultName) 
     return jsonify({'status' : 'Emails sent successfully'}),200
 
 @app.route('/api/results/<resultName>/email/stats')

@@ -5,6 +5,7 @@ import style from "./Result.module.css";
 import generatePDF from "../../utils/pdf";
 import { TiTick } from "react-icons/ti";
 import { RiCloseLine } from "react-icons/ri";
+import { resultPrettyName } from "../../utils/resultPrettyName";
 
 const Row = ({ e, subjects }) => {
     return (
@@ -46,12 +47,13 @@ const Results = () => {
                 "Email Read": r.emailRead ? "Yes" : "No",
             };
         });
-        generatePDF("Results", data);
+        generatePDF(resultPrettyName(rname), data);
     };
     if (results.isLoading || sendEmail.isLoading) return <h3>Loading</h3>;
 
     return (
         <div className={style.container}>
+            <h1>{resultPrettyName(rname)}</h1>
             {sendButton ? (
                 <button
                     className={style.send}

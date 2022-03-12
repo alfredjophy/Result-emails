@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "file-saver": "^2.0.5",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.23",
     "pdf.js": "^0.1.0",

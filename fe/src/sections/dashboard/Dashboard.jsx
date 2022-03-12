@@ -36,7 +36,7 @@ const Dashboard = () => {
                 "Email Read": `${dep.stats.toFixed(2)} %`,
             };
         });
-        generatePDF("Departments", data);
+        generatePDF("Departments Statistics", data);
     };
 
     if (departments.isLoading) return <h1>Loading</h1>;
@@ -44,7 +44,9 @@ const Dashboard = () => {
     return (
         <div>
             <h1 className={style.heading}>Status</h1>
-            <button className={style.print} onClick={printDash}>Print</button>
+            <button className={style.print} onClick={printDash}>
+                Print
+            </button>
             <section className={style.sec}>
                 <div className={style.cards}>
                     {departments.data.map((d) => (

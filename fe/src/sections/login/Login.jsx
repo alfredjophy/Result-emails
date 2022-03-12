@@ -11,7 +11,7 @@ const Login = (props) => {
         onSuccess: (data, variables, context) => {
             if (data.username) {
                 props.setLoginStatus(() => true);
-                navigate("/dashboard");
+                navigate("/");
             } else {
                 alert("Bad credentials");
             }
@@ -29,22 +29,25 @@ const Login = (props) => {
     return (
         <>
             <div className={style.formBody}>
-                
-            <form onSubmit={handleSubmit} className={style.form}>
-                <div className={style.imglogo}>
-                    <img src={stc} alt="stc" />
-                    <img src={bg1} alt="bigone" />
-                    <h5>Welcome to Vite application please sign in through the user name password
- which have been provided. </h5>
-                </div>
-                <input name="username" placeholder="USERNAME" />
-                <input name="password" type="password" placeholder="PASSWORD" />
-                <input type="submit" name="Submit" />
-            </form>
-        </div>
-        <div className={style.body}>
-
-        </div>
+                <form onSubmit={handleSubmit} className={style.form}>
+                    <div className={style.imglogo}>
+                        <img src={stc} alt="stc" />
+                        <img src={bg1} alt="bigone" />
+                        <h5>
+                            Welcome to Vite application please sign in through
+                            the user name password which have been provided.{" "}
+                        </h5>
+                    </div>
+                    <input name="username" placeholder="USERNAME" />
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="PASSWORD"
+                    />
+                    <input type="submit" name="Submit" />
+                </form>
+            </div>
+            <div className={style.body}></div>
         </>
     );
 };
