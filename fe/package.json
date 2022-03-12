@@ -19,6 +19,7 @@
     "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
+    "@types/jspdf": "^2.0.0",
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.8.0"
   }
