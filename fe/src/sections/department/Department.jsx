@@ -8,17 +8,35 @@ import {
 import { Link } from "react-router-dom";
 import style from "./Department.module.css";
 
+const StatsBar = ({ total, truths }) => {
+    return (
+        <div style={{ width: "5rem", height: "2rem", backgroundColor: "red" }}>
+            <div
+                style={{
+                    width: `${(truths / total) * 100}%`,
+                    height: "100%",
+                    backgroundColor: "green",
+                }}
+            />
+            <div />
+        </div>
+    );
+};
+
 const ResultPreview = (props) => {
     const stats = useResultStatsQuery(props.rname);
     if (stats.isLoading) return <h2>Loading</h2>;
 
     return (
         <div>
-            <Link className={style.link} to={`/results/${props.rname}`}>{props.rname}</Link>
+            <Link className={style.link} to={`/results/${props.rname}`}>
+                {props.rname}
+            </Link>
             {stats.data.emailSent && (
-                <h4>
-                    Read Status :{stats.data.read} of {stats.data.totalCount}
-                </h4>
+                <StatsBar
+                    total={stats.data.totalCount}
+                    truths={stats.data.read}
+                />
             )}
         </div>
     );
@@ -44,20 +62,21 @@ const Department = () => {
     return (
         <div className={style.container}>
             <div className={style.box}>
-            {getDepartmentCourses.map((course) => (
-                <div key={course}>
-                    <h4 className={style.h4}>{course}</h4>
-                    {results.data
-                        .filter(
-                            (r) =>
-                                r.courseID ==
-                                courses.data.find((c) => c.course == course).id
-                        )
-                        .map((r) => (
-                            <ResultPreview key={r.name} rname={r.name} />
-                        ))}
-                </div>
-            ))}
+                {getDepartmentCourses.map((course) => (
+                    <div key={course}>
+                        <h4 className={style.h4}>{course}</h4>
+                        {results.data
+                            .filter(
+                                (r) =>
+                                    r.courseID ==
+                                    courses.data.find((c) => c.course == course)
+                                        .id
+                            )
+                            .map((r) => (
+                                <ResultPreview key={r.name} rname={r.name} />
+                            ))}
+                    </div>
+                ))}
             </div>
         </div>
     );

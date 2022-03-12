@@ -1,11 +1,31 @@
 import { useParams } from "react-router-dom";
 import { useResultQuery, useSendMailQuery } from "../../queries";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import style from "./Result.module.css";
 import generatePDF from "../../utils/pdf";
 import { TiTick } from "react-icons/ti";
 import { RiCloseLine } from "react-icons/ri";
 
+const Row = ({ e, subjects }) => {
+    return (
+        <tr>
+            <td>{e.SI_No}</td>
+            <td>{e.Name}</td>
+            <td>{e.Registration_No}</td>
+            <td>{e.Email}</td>
+            {subjects.map((s) => (
+                <td>{e[s.replace(" ", "_")]}</td>
+            ))}
+            <td>
+                {e.emailRead ? (
+                    <TiTick className={style.tick} />
+                ) : (
+                    <RiCloseLine className={style.close} />
+                )}
+            </td>
+        </tr>
+    );
+};
 const Results = () => {
     let { rname } = useParams();
     const [sendButton, setButton] = useState(true);
@@ -56,6 +76,7 @@ const Results = () => {
                     <tr>
                         <th>SI No</th>
                         <th>Name</th>
+                        <th>Registration No</th>
                         <th>Email</th>
                         {results.data.resultInfo.subjects.map((s) => (
                             <th>{s}</th>
@@ -66,21 +87,11 @@ const Results = () => {
 
                 <tbody>
                     {results.data.records.map((e) => (
-                        <tr key={e.SI_No}>
-                            <td>{e.SI_No}</td>
-                            <td>{e.Name}</td>
-                            <td>{e.Email}</td>
-                            {results.data.resultInfo.subjects.map((s) => (
-                                <td>{e[s.replace(" ", "_")]}</td>
-                            ))}
-                            <td>
-                                {e.emailRead ? (
-                                    <TiTick className={style.tick} />
-                                ) : (
-                                    <RiCloseLine className={style.close} />
-                                )}
-                            </td>
-                        </tr>
+                        <Row
+                            key={e.SI_No}
+                            e={e}
+                            subjects={results.data.resultInfo.subjects}
+                        ></Row>
                     ))}
                 </tbody>
             </table>

@@ -1,6 +1,6 @@
 import { useQuery, useMutation } from "react-query";
 
-const BASE_URL = "http://resultmails.jijuamathew.in/api";
+const BASE_URL = "http://localhost:5050/api";
 
 async function getResult(rname) {
     const response = await fetch(`${BASE_URL}/results/${rname}`, {

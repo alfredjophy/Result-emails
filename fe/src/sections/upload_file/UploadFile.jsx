@@ -7,6 +7,32 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Upload.module.css";
 
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
+
+const getYears = () => {
+    const d = new Date();
+    const curYear = d.getFullYear();
+
+    let years = [];
+    for (let i = curYear - 5; i < curYear + 5; i++) {
+        years.push(i);
+    }
+    return years;
+};
+
 const UploadFile = () => {
     const departments = useDepartmentsQuery();
     const courses = useCoursesQuery();
@@ -95,8 +121,27 @@ const UploadFile = () => {
                         )
                     )}
                 </select>
-                <label name="exam_date">Date of the examination</label>
-                <input type="date" name="exam_date" required />
+                <label name="exam">Internal Exam</label>
+                <select name="exam">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <label name="month">Month</label>
+                <select name="month">
+                    {months.map((m, i) => (
+                        <option key={m} value={i}>
+                            {m}
+                        </option>
+                    ))}
+                </select>
+                <label name="year">Year</label>
+                <select name="year">
+                    {getYears().map((y) => (
+                        <option key={y} value={y}>
+                            {y}
+                        </option>
+                    ))}
+                </select>
                 <input type="submit" name="Submit" />
             </form>
         </div>
