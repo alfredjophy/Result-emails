@@ -9,6 +9,7 @@ import db_functions as db
 import auth_db as auth
 from utils.excel import verifySheet,getRecords,saveFile
 from utils.generateFileName import generateFileName
+from utils.getStudentResultPage import getStudentResultPage
 from utils.email import send_email
 
 
@@ -64,14 +65,17 @@ def upload_sheet() :
     if not authorization(0):
         return jsonify({'error':'unauthenticated'}),415
     metadata=request.form
+    print(metadata)
     file=request.files['file']
 
     sheetStatus=verifySheet(file)
+    print(sheetStatus)
     if not sheetStatus[0] : 
         return jsonify({"error" : sheetStatus[2]}),sheetStatus[1]
     fileName = generateFileName(metadata)
+    print(fileName)
     saveFile(file,FILE_STORAGE_PATH/'{0}.xlsx'.format(fileName))
-    status = db.add_result(fileName,getRecords(file),metadata['department'],metadata['course'],metadata['semester'])
+    status = db.add_result(fileName,getRecords(file),metadata['department'],metadata['course'],metadata['semester'],metadata['exam'],metadata['month'],metadata['year'])
     if not status :
         return jsonify({'error':'file already exists'}),415
     return jsonify({'resultName' : fileName}),200
@@ -100,14 +104,16 @@ def get_department_stats(dname):
 
     records = list(map(lambda x: db.get_result(x['name']),results))
 
-    def get_stats(records):
+    def get_stats(records,p):
         readCount=reduce(lambda prev,x: prev+x['emailRead'],records,0)
         totalCount = len(records)
-        return (readCount/totalCount)*100
+        try :
+            return [readCount+p[0],totalCount+p[1]]
+        except :
+            return 0
+    stat=reduce(lambda prev,x: get_stats(x['records'],prev),records,[0,0])
 
-    stat=reduce(lambda prev,x: ( prev+get_stats(x['records']))/2,records,0)
-
-    return jsonify({'readStats' : stat}),200
+    return jsonify({'readStats' : (stat[0]/stat[1])*100}),200
 
 @app.route('/api/results/<rname>')
 def getResult(rname):
@@ -131,7 +137,7 @@ def sendmail(resultName):
         return jsonify({'error':'email already sent'}),415
     records = result['records']
     linkIDs = db.add_uuid_link(records,resultName)
-    send_email('Subject',records,linkIDs) 
+    send_email('Subject',records,linkIDs,resultName) 
     return jsonify({'status' : 'Emails sent successfully'}),200
 
 @app.route('/api/results/<resultName>/email/stats')
@@ -149,12 +155,14 @@ def getResultEmailReadStats(resultName):
     totalCount = len(records)
     return jsonify({'emailSent':True,'read':readCount,'totalCount':totalCount}),200
 
+
 @app.route('/api/results/student/<linkID>',methods=['GET'])
 def getResultFromLinkID(linkID) : 
     record=db.get_data_from_linkID(linkID)    
     if record == () :
         return jsonify({'error' : 'record not found'}),404
-    return jsonify(record),200
+    page = getStudentResultPage(record['record'],record['result_name'])   
+    return page,200
 
 @app.route('/api/departments',methods=['GET'])
 def get_departments():

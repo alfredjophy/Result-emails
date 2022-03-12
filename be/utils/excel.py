@@ -7,7 +7,7 @@ def verifySheet(sheet) :
     except:
         return [False,415,"Wrong file type"]
     columns = results.columns
-    if not ('SI No' in columns and 'Name' in columns and 'Email' in columns):
+    if not ('SI No' in columns and 'Name' in columns and 'Email' in columns and 'Registration No' in columns):
         return [False,400,"Invalid columns names"]
     return [True]
 

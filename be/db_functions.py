@@ -13,7 +13,7 @@ def connect():
     cur = db.cursor()
     return db,cur
 
-def add_result(name,records,dname,course,semester) : 
+def add_result(name,records,dname,course,semester,exam,month,year) : 
     db,cur = connect()
 
     cur.execute('select * from results where name like \'{0}\''.format(name))
@@ -26,18 +26,18 @@ def add_result(name,records,dname,course,semester) :
     courseID = cur.fetchall()[0]['id']
     
     # see if already exists
-    cur.execute('insert into results(name,uploadDate,emailSent,depID,courseID,semester) values(\'{0}\',CURDATE(),false,{1},{2},{3})'.format(name,depID,courseID,semester))
+    cur.execute('insert into results(name,emailSent,depID,courseID,semester,exam,month,year) values(\'{0}\',false,{1},{2},{3},{4},{5},{6})'.format(name,depID,courseID,semester,exam,month,year))
         
     # this works 
-    subjects=list(filter(lambda x: x not in ['SI No','Name','Email'],(records[0].keys())))
+    subjects=list(filter(lambda x: x not in ['SI No','Name','Email','Registration No'],(records[0].keys())))
     cur.execute('update results set subjects = \'{0}\' where Name = \'{1}\''.format(reduce(lambda str,subject :'{0},{1}'.format(str,subject.strip()),subjects),name))
     
     subjectsMachineR=list(map(lambda x : x.strip().replace(' ','_'),subjects))
     subject_args=reduce(lambda str, subject :'{0},{1} varchar(50)'.format(str,subject),subjectsMachineR,'')
-    cur.execute('create table {0}(SI_No varchar(20),Name varchar(35),Email varchar(45){1},emailRead boolean default false)'.format(name,subject_args))
+    cur.execute('create table {0}(SI_No varchar(20),Registration_No varchar(20),Name varchar(35),Email varchar(45){1},emailRead boolean default false)'.format(name,subject_args))
     
     for i in records : 
-        values = '\'{0}\',\'{1}\',\'{2}\''.format(i['SI No'],i['Name'],i['Email'])
+        values = '\'{0}\',\'{1}\',\'{2}\',\'{3}\''.format(i['SI No'],i['Registration No'],i['Name'],i['Email'])
         for j in subjects:
             mark = str(i[j])
             if mark == 'nan':
@@ -92,7 +92,7 @@ def get_data_from_linkID(linkID):
         cur.execute('update {0} set emailRead = true where SI_No like \'{1}\''.format(linkData['name'],record['SI_No']))
         db.commit()
     db.close()
-    return record 
+    return {'record':record ,'result_name' : linkData['name']}
 
 def get_departments():
     db,cur = connect()
