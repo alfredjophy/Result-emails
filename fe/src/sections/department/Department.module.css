@@ -9,7 +9,7 @@
 }
 .box{
     width: 80%;
-    max-width: 40rem;
+    max-width: 45rem;
     background: #043565;
     padding: 2rem 0;
 }
@@ -17,14 +17,36 @@
     text-decoration: none;
     color: white;
     margin-top: 10px;
+    width: 65%;
 }
 .h4{
     text-align: left;
     color: black;
     position: relative;
-    left: 25%;
+    left: 10%;
     background-color: white;
     width: max-content;
     padding: 8px;
     border-radius: 5px;
+}
+.res{
+    display: flex;
+}
+.percentholder{
+    height: 16px;
+    background-color: red;
+    width: 30%;
+    margin-top: .7rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+}
+.percent{
+    height: 100%;
+    background: green;
+    border-radius: 15px;
+}
+.h6{
+    width: 5%;
+    margin-top: .76rem;
+    color: white;
 }

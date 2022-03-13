@@ -71,77 +71,97 @@ const UploadFile = () => {
             <br />
 
             <form onSubmit={handleSubmit}>
-                <input
-                    type="file"
-                    name="file"
-                    onChange={(e) => null}
-                    required
-                />
-                <label name="department">Select Department</label>
-                <select
-                    name="department"
-                    onChange={(e) => {
-                        const i = departments.data.findIndex(
-                            (p, i) => p.name == e.target.value
-                        );
-                        setcurDep(i);
-                    }}
-                >
-                    {departments.data.map((d) => (
-                        <option key={d.name} value={d.name}>
-                            {d.name}
-                        </option>
-                    ))}
-                </select>
 
-                <label name="course">Select Course</label>
-                <select
-                    name="course"
-                    onChange={(e) => {
-                        const i = courses.data.findIndex(
-                            (c, i) => c.course == e.target.value
-                        );
-                        setSemesters(courses.data[i].semesters);
-                    }}
-                >
-                    {departments.data[curDep]["courses"].map((c) => (
-                        <option key={c} value={c}>
-                            {c}
-                        </option>
-                    ))}
-                </select>
-
-                <label name="semester">Semester</label>
-                <select name="semester">
-                    {Array.from(Array(semesters), (x, index) => index + 1).map(
-                        (i) => (
-                            <option key={i} value={i}>
-                                {i}
-                            </option>
-                        )
-                    )}
-                </select>
-                <label name="exam">Internal Exam</label>
-                <select name="exam">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-                <label name="month">Month</label>
-                <select name="month">
-                    {months.map((m, i) => (
-                        <option key={m} value={i}>
-                            {m}
-                        </option>
-                    ))}
-                </select>
-                <label name="year">Year</label>
-                <select name="year">
-                    {getYears().map((y) => (
-                        <option key={y} value={y}>
-                            {y}
-                        </option>
-                    ))}
-                </select>
+                <div className={style.full}>
+                    <div className={style.half}>
+                        <label name="department">Department</label>
+                        <select
+                            name="department"
+                            onChange={(e) => {
+                                const i = departments.data.findIndex(
+                                    (p, i) => p.name == e.target.value
+                                );
+                                setcurDep(i);
+                            }}
+                        >
+                            {departments.data.map((d) => (
+                                <option key={d.name} value={d.name}>
+                                    {d.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className={style.half}>
+                        <label name="course">Select Course</label>
+                        <select
+                            name="course"
+                            onChange={(e) => {
+                                const i = courses.data.findIndex(
+                                    (c, i) => c.course == e.target.value
+                                );
+                                setSemesters(courses.data[i].semesters);
+                            }}
+                        >
+                            {departments.data[curDep]["courses"].map((c) => (
+                                <option key={c} value={c}>
+                                    {c}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <div className={style.full}>
+                    <div className={style.half}>
+                        <label name="semester">Semester</label>
+                        <select name="semester">
+                            {Array.from(Array(semesters), (x, index) => index + 1).map(
+                                (i) => (
+                                    <option key={i} value={i}>
+                                        {i}
+                                    </option>
+                                )
+                            )}
+                        </select>
+                    </div>
+                    <div className={style.half}>
+                        <label name="exam">Internal Exam</label>
+                        <select name="exam">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                <div className={style.full}>
+                    <div className={style.half}>
+                        <label name="month">Month</label>
+                        <select name="month">
+                            {months.map((m, i) => (
+                                <option key={m} value={i}>
+                                    {m}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className={style.half}>
+                        <label name="year">Year</label>
+                        <select name="year">
+                            {getYears().map((y) => (
+                                <option key={y} value={y}>
+                                    {y}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <div className={style.upload}>
+                    <label >Upload File</label>
+                    <input
+                        type="file"
+                        name="file"
+                        onChange={(e) => null}
+                        required
+                    />
+                </div>
                 <input type="submit" name="Submit" />
             </form>
         </div>

@@ -11,12 +11,10 @@ import { resultPrettyName } from "../../utils/resultPrettyName";
 
 const StatsBar = ({ total, truths }) => {
     return (
-        <div style={{ width: "5rem", height: "2rem", backgroundColor: "red" }}>
-            <div
+        <div className={style.percentholder}>
+            <div className={style.percent}
                 style={{
                     width: `${(truths / total) * 100}%`,
-                    height: "100%",
-                    backgroundColor: "green",
                 }}
             />
             <div />
@@ -29,7 +27,7 @@ const ResultPreview = (props) => {
     if (stats.isLoading) return <h2>Loading</h2>;
 
     return (
-        <div>
+        <div className={style.res}>
             <Link className={style.link} to={`/results/${props.rname}`}>
                 {resultPrettyName(props.rname)}
             </Link>
@@ -39,6 +37,7 @@ const ResultPreview = (props) => {
                     truths={stats.data.read}
                 />
             )}
+            <h6 className={style.h6}>50 %</h6>
         </div>
     );
 };
@@ -63,6 +62,7 @@ const Department = () => {
     return (
         <div className={style.container}>
             <div className={style.box}>
+                <h2 style={{color:"white"}}>DepartmentName</h2>
                 {getDepartmentCourses.map((course) => (
                     <div key={course}>
                         <h4 className={style.h4}>{course}</h4>
