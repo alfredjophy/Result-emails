@@ -27,7 +27,7 @@ const getYears = () => {
     const curYear = d.getFullYear();
 
     let years = [];
-    for (let i = curYear - 5; i < curYear + 5; i++) {
+    for (let i = curYear - 2; i < curYear + 3; i++) {
         years.push(i);
     }
     return years;
@@ -71,7 +71,6 @@ const UploadFile = () => {
             <br />
 
             <form onSubmit={handleSubmit}>
-
                 <div className={style.full}>
                     <div className={style.half}>
                         <label name="department">Department</label>
@@ -114,13 +113,14 @@ const UploadFile = () => {
                     <div className={style.half}>
                         <label name="semester">Semester</label>
                         <select name="semester">
-                            {Array.from(Array(semesters), (x, index) => index + 1).map(
-                                (i) => (
-                                    <option key={i} value={i}>
-                                        {i}
-                                    </option>
-                                )
-                            )}
+                            {Array.from(
+                                Array(semesters),
+                                (x, index) => index + 1
+                            ).map((i) => (
+                                <option key={i} value={i}>
+                                    {i}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div className={style.half}>
@@ -154,7 +154,7 @@ const UploadFile = () => {
                     </div>
                 </div>
                 <div className={style.upload}>
-                    <label >Upload File</label>
+                    <label>Upload File</label>
                     <input
                         type="file"
                         name="file"

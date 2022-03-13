@@ -12,7 +12,8 @@ import { resultPrettyName } from "../../utils/resultPrettyName";
 const StatsBar = ({ total, truths }) => {
     return (
         <div className={style.percentholder}>
-            <div className={style.percent}
+            <div
+                className={style.percent}
                 style={{
                     width: `${(truths / total) * 100}%`,
                 }}
@@ -29,7 +30,9 @@ const ResultPreview = (props) => {
     return (
         <div className={style.res}>
             <Link className={style.link} to={`/results/${props.rname}`}>
-                {resultPrettyName(props.rname)}
+                {resultPrettyName(props.rname).substring(
+                    resultPrettyName(props.rname).search("Semester")
+                )}
             </Link>
             {stats.data.emailSent && (
                 <StatsBar
@@ -37,7 +40,10 @@ const ResultPreview = (props) => {
                     truths={stats.data.read}
                 />
             )}
-            <h6 className={style.h6}>50 %</h6>
+            <p className={style.h6}>
+                {(stats.data.read / stats.data.totalCount).toPrecision(2) * 100}
+                %
+            </p>
         </div>
     );
 };
@@ -62,7 +68,7 @@ const Department = () => {
     return (
         <div className={style.container}>
             <div className={style.box}>
-                <h2 style={{color:"white"}}>DepartmentName</h2>
+                <h2 style={{ color: "white" }}>Department of {dname}</h2>
                 {getDepartmentCourses.map((course) => (
                     <div key={course}>
                         <h4 className={style.h4}>{course}</h4>
