@@ -29,9 +29,10 @@ function App() {
     console.log(user);
     const getloginStatus = useLoginStatus({
         onSuccess: (data) => {
+            console.log(data);
             setLoginStatus(() => data.loginStatus);
-            if (data.loginStatus && isLoggedIn === null) {
-                setUser(() => data);
+            setUser(() => data);
+            if (data.loginStatus && isLoggedIn == null) {
                 navigate("/");
             }
         },

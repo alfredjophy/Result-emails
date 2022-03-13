@@ -34,8 +34,9 @@ const Login = (props) => {
                         <img src={stc} alt="stc" />
                         <img src={bg1} alt="bigone" />
                         <h5>
-                            Welcome to Vite application please sign in through
-                            the user name password which have been provided.{" "}
+                            Welcome to STC Result Emails application please sign
+                            in with the username and password which have been
+                            provided.{" "}
                         </h5>
                     </div>
                     <input name="username" placeholder="USERNAME" />

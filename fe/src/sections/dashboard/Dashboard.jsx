@@ -50,7 +50,7 @@ const Dashboard = () => {
             <section className={style.sec}>
                 <div className={style.cards}>
                     {departments.data.map((d) => (
-                        <DepartmentCard key={d.dname} d={d} />
+                        <DepartmentCard key={d.name} d={d} />
                     ))}
                 </div>
             </section>
