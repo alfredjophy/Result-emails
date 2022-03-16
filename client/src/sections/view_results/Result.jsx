@@ -15,7 +15,7 @@ const Row = ({ e, subjects }) => {
             <td>{e.Registration_No}</td>
             <td>{e.Email}</td>
             {subjects.map((s) => (
-                <td>{e[s.replace(" ", "_")]}</td>
+                <td>{e[s.replace(/ /gi, "_")]}</td>
             ))}
             <td>
                 {e.emailRead ? (

@@ -25,7 +25,7 @@ const StudentResult = () => {
                 </tr>
                 {subjects.map((subject) => (
                     <tr>
-                        <td>{subject.replace("_", " ")}</td>
+                        <td>{subject.replace(/_/gi, " ")}</td>
                         <td>{result.data[subject]} %</td>
                     </tr>
                 ))}

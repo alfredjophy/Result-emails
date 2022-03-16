@@ -11,7 +11,6 @@ const Login = (props) => {
         onSuccess: (data, variables, context) => {
             if (data.username) {
                 props.setLoginStatus(() => true);
-                navigate("/");
             } else {
                 alert("Bad credentials");
             }

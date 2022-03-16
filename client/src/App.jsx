@@ -26,7 +26,6 @@ function App() {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
-    console.log(user);
     const getloginStatus = useLoginStatus({
         onSuccess: (data) => {
             console.log(data);
@@ -37,7 +36,12 @@ function App() {
             }
         },
     });
-    useEffect(() => isLoggedIn === false && navigate("/login"), [isLoggedIn]);
+    useEffect(() => {
+        getloginStatus.refetch();
+        if (isLoggedIn === false) navigate("/login");
+        else navigate("/");
+    }, [isLoggedIn]);
+    useEffect(() => console.log(user), [user]);
 
     if (getloginStatus.isLoading) return <h1>Loading</h1>;
 
@@ -59,11 +63,7 @@ function App() {
                     <Route
                         path="/uploadfile"
                         element={
-                            user !== null && user.level == 0 ? (
-                                <UploadFile />
-                            ) : (
-                                <Restricted />
-                            )
+                            user.level == 0 ? <UploadFile /> : <Restricted />
                         }
                     />
                 </Route>

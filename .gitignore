@@ -1,3 +1,4 @@
 password
 *__pycache__
 *.tar.gz
+*dist*
