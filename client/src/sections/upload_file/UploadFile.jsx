@@ -27,7 +27,7 @@ const getYears = () => {
     const curYear = d.getFullYear();
 
     let years = [];
-    for (let i = curYear - 2; i < curYear + 3; i++) {
+    for (let i = curYear - 1; i < curYear + 3; i++) {
         years.push(i);
     }
     return years;
@@ -48,6 +48,18 @@ const UploadFile = () => {
             navigate(`/results/${data.resultName}`);
         },
     });
+
+    useEffect(() => {
+        if (courses.data == undefined) return;
+        const i = courses.data.findIndex(
+            (c, i) => c.course == departments.data[curDep]["courses"][0]
+        );
+        setSemesters(courses.data[i].semesters);
+
+        setSemesters(courses.data[i].semesters);
+
+        console.log(departments.data[curDep]);
+    }, [curDep]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -153,6 +165,25 @@ const UploadFile = () => {
                         </select>
                     </div>
                 </div>
+                {departments.data[curDep].other != null && (
+                    <div className={style.full}>
+                        <div className={style.half}>
+                            <label name="other">Other</label>
+                            <select name="other">
+                                {[
+                                    null,
+                                    ...JSON.parse(
+                                        departments.data[curDep].other
+                                    )[departments.data[curDep]["courses"][0]],
+                                ].map((m) => (
+                                    <option key={m} value={m}>
+                                        {m}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                )}
                 <div className={style.upload}>
                     <label>Upload File</label>
                     <input

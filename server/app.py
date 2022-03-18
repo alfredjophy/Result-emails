@@ -24,7 +24,7 @@ FILE_STORAGE_PATH = pathlib.Path.home()/'files'
 if not FILE_STORAGE_PATH.is_dir():
     os.mkdir(FILE_STORAGE_PATH)
 
-@app.route('/api/isLoggedIn',methods=['GET'])
+@app.route('/isLoggedIn',methods=['GET'])
 def is_logged_in():
     if 'username' in session:
         user = auth.get_user(session['username'])
@@ -32,7 +32,7 @@ def is_logged_in():
         return jsonify(user),200
     return jsonify({'loginStatus':False}),200
 
-@app.route('/api/login',methods=['POST'])
+@app.route('/login',methods=['POST'])
 def auth_login():
     username,password = request.form['username'],request.form['password']
     session.clear()
@@ -46,7 +46,7 @@ def auth_login():
     user = auth.get_user(username)
     return jsonify(user),200
 
-@app.route('/api/logout',methods=['POST'])
+@app.route('/logout',methods=['POST'])
 def auth_logout():
     session.clear()
     return jsonify({'status':'logged out'}),200
@@ -56,18 +56,18 @@ def authorization(level):
         return True
     return False
 
-@app.route('/api/status',methods=['GET'])
+@app.route('/status',methods=['GET'])
 def app_status() : 
     return jsonify({'status':'working'}),200
 
-@app.route('/api/upload_sheet',methods=['POST'])
+@app.route('/upload_sheet',methods=['POST'])
 def upload_sheet() : 
     if not authorization(0):
         return jsonify({'error':'unauthenticated'}),415
     metadata=request.form
     print(metadata)
     file=request.files['file']
-
+    print(metadata)
     sheetStatus=verifySheet(file)
     print(sheetStatus)
     if not sheetStatus[0] : 
@@ -80,7 +80,7 @@ def upload_sheet() :
         return jsonify({'error':'file already exists'}),415
     return jsonify({'resultName' : fileName}),200
 
-@app.route('/api/departments/<dname>/results',methods=['GET'])
+@app.route('/departments/<dname>/results',methods=['GET'])
 def get_result(dname) :
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
@@ -90,7 +90,7 @@ def get_result(dname) :
     return jsonify(result),200
 
 # this is not good
-@app.route('/api/departments/<dname>/stats',methods=['GET'])
+@app.route('/departments/<dname>/stats',methods=['GET'])
 def get_department_stats(dname):
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
@@ -115,7 +115,7 @@ def get_department_stats(dname):
 
     return jsonify({'readStats' : (stat[0]/stat[1])*100}),200
 
-@app.route('/api/results/<rname>')
+@app.route('/results/<rname>')
 def getResult(rname):
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
@@ -125,7 +125,7 @@ def getResult(rname):
         return jsonify({'error':'result not found'}),404
     return jsonify(result),200
 
-@app.route('/api/results/<resultName>/emails/send',methods=['POST'])
+@app.route('/results/<resultName>/emails/send',methods=['POST'])
 def sendmail(resultName):
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
@@ -140,7 +140,7 @@ def sendmail(resultName):
     send_email('Internal Exam Result',records,linkIDs,resultName) 
     return jsonify({'status' : 'Emails sent successfully'}),200
 
-@app.route('/api/results/<resultName>/email/stats')
+@app.route('/results/<resultName>/email/stats')
 def getResultEmailReadStats(resultName):
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
@@ -156,7 +156,7 @@ def getResultEmailReadStats(resultName):
     return jsonify({'emailSent':True,'read':readCount,'totalCount':totalCount}),200
 
 
-@app.route('/api/results/student/<linkID>',methods=['GET'])
+@app.route('/results/student/<linkID>',methods=['GET'])
 def getResultFromLinkID(linkID) : 
     record=db.get_data_from_linkID(linkID)    
     if record == () :
@@ -164,7 +164,7 @@ def getResultFromLinkID(linkID) :
     page = getStudentResultPage(record['record'],record['result_name'])   
     return page,200
 
-@app.route('/api/departments',methods=['GET'])
+@app.route('/departments',methods=['GET'])
 def get_departments():
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
@@ -172,7 +172,7 @@ def get_departments():
     departments = db.get_departments()
     return jsonify(departments),200
 
-@app.route('/api/courses',methods=['GET'])
+@app.route('/courses',methods=['GET'])
 def get_course():
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415

@@ -34,7 +34,7 @@ def add_result(name,records,dname,course,semester,exam,month,year) :
     
     subjectsMachineR=list(map(lambda x : x.strip().replace(' ','_'),subjects))
     subject_args=reduce(lambda str, subject :'{0},{1} varchar(50)'.format(str,subject),subjectsMachineR,'')
-    cur.execute('create table {0}(SI_No varchar(20),Registration_No varchar(20),Name varchar(35),Email varchar(45){1},emailRead boolean default false)'.format(name,subject_args))
+    cur.execute('create table `{0}`(SI_No varchar(20),Registration_No varchar(20),Name varchar(35),Email varchar(45){1},emailRead boolean default false)'.format(name,subject_args))
     
     for i in records : 
         values = '\'{0}\',\'{1}\',\'{2}\',\'{3}\''.format(i['SI No'],i['Registration No'],i['Name'],i['Email'])
@@ -44,7 +44,7 @@ def add_result(name,records,dname,course,semester,exam,month,year) :
                 values+=',NULL'
             else:
                 values+=','+mark 
-        cur.execute('insert into {0} values({1},false)'.format(name,values)) 
+        cur.execute('insert into `{0}` values({1},false)'.format(name,values)) 
     db.commit() 
     db.close() 
     return True
@@ -55,7 +55,7 @@ def get_result(rname):
     metadata=cur.fetchall()
     if metadata == ():
         return False
-    cur.execute('select * from {0}'.format(rname))
+    cur.execute('select * from `{0}`'.format(rname))
     results=cur.fetchall()
     resultInfo = metadata[0]
     resultInfo['subjects'] = metadata[0]['subjects'].split(',')
@@ -86,10 +86,10 @@ def get_data_from_linkID(linkID):
     db,cur = connect()
     cur.execute('select * from result_links where hex(id) like \'{0}\''.format(linkID))
     linkData = cur.fetchall()[0]
-    cur.execute('select * from {0} where SI_No like \'{1}\''.format(linkData['name'],linkData['SI_No']))
+    cur.execute('select * from `{0}` where SI_No like \'{1}\''.format(linkData['name'],linkData['SI_No']))
     record = cur.fetchall()[0]
     if not record['emailRead']:
-        cur.execute('update {0} set emailRead = true where SI_No like \'{1}\''.format(linkData['name'],record['SI_No']))
+        cur.execute('update `{0}` set emailRead = true where SI_No like \'{1}\''.format(linkData['name'],record['SI_No']))
         db.commit()
     db.close()
     return {'record':record ,'result_name' : linkData['name']}
@@ -99,7 +99,7 @@ def get_departments():
     cur.execute('select * from departments order by depname')
     result= cur.fetchall()
     db.close()
-    departments = list(map(lambda x: dict({'name' :x['depname'],'courses':sorted(x['courses'].split(','))} ),result))
+    departments = list(map(lambda x: dict({'name' :x['depname'],'courses':sorted(x['courses'].split(',')),'other':x['other']} ),result))
     return departments
 
 def in_department(dname):

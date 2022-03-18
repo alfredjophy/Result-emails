@@ -27,9 +27,10 @@ export const resultPrettyName = (rname) => {
     const month = months[data[dataLength - 2]];
     const year = data[dataLength - 3];
     const semester = data[dataLength - 4].substring(1);
-    const department = range(1, dataLength - 4).reduce(
+    const department_and_other = range(1, dataLength - 4).reduce(
         (prev, x) => prev + data[x] + " ",
         ""
     );
+    const department = department_and_other;
     return `${course} ${department} Semester ${semester} Internal Exam ${internal_exam} - ${month} ${year} `;
 };
