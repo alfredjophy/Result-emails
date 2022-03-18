@@ -27,12 +27,16 @@ const ResultPreview = (props) => {
     const stats = useResultStatsQuery(props.rname);
     if (stats.isLoading) return <h2>Loading</h2>;
 
+    const prettyName = resultPrettyName(props.rname);
+    const loc = prettyName.search(/\(/) || prettyName.search("Semester");
+    const name = resultPrettyName(props.rname)
+        .substring(loc)
+        .replace(/\(|\)/g, ""); // remove parentheses
+
     return (
         <div className={style.res}>
             <Link className={style.link} to={`/results/${props.rname}`}>
-                {resultPrettyName(props.rname).substring(
-                    resultPrettyName(props.rname).search("Semester")
-                )}
+                {name}
             </Link>
             {stats.data.emailSent && (
                 <StatsBar
@@ -64,7 +68,6 @@ const Department = () => {
         (dep) => dep.name === dname
     )[0]["courses"];
 
-    // this will look better once the design is done
     return (
         <div className={style.container}>
             <div className={style.box}>

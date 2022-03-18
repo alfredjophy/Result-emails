@@ -9,7 +9,7 @@
 }
 .box {
     width: 80%;
-    max-width: 45rem;
+    max-width: 55rem;
     background: #043565;
     padding: 2rem 0;
 }
@@ -53,4 +53,3 @@
     margin-right: 15px;
     color: white;
 }
-
