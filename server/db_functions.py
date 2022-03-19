@@ -61,6 +61,11 @@ def get_result(rname):
     resultInfo['subjects'] = metadata[0]['subjects'].split(',')
     return {'records':results,'resultInfo':resultInfo}
 
+def delete_result(rname):
+    db,cur=connect()
+    cur.execute('delete from results where name like \'{0}\''.format(rname))
+    db.commit()
+
 def get_department_results(department):
     db,cur = connect()
     cur.execute('select * from results where depID in (select id from departments where depname like \'{0}\')'.format(department.replace('_',' ')))

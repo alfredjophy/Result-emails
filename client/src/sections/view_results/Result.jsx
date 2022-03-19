@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
-import { useResultQuery, useSendMailQuery } from "../../queries";
+import {
+    useResultQuery,
+    useSendMailQuery,
+    useDeleteResult,
+} from "../../queries";
 import { useState, useEffect, Fragment } from "react";
 import style from "./Result.module.css";
 import generatePDF from "../../utils/pdf";
 import { TiTick } from "react-icons/ti";
 import { RiCloseLine } from "react-icons/ri";
 import { resultPrettyName } from "../../utils/resultPrettyName";
+import { useNavigate } from "react-router-dom";
 
 const Row = ({ e, subjects }) => {
     return (
@@ -30,9 +35,12 @@ const Row = ({ e, subjects }) => {
 const Results = () => {
     let { rname } = useParams();
     const [sendButton, setButton] = useState(true);
-
+    const navigate = useNavigate();
     const results = useResultQuery(rname, {
         onSuccess: (data) => setButton(!data.resultInfo.emailSent),
+    });
+    const deleteResult = useDeleteResult(rname, {
+        onSuccess: () => navigate("/uploadfile"),
     });
     const sendEmail = useSendMailQuery(rname, {
         onSuccess: () => setButton(false),
@@ -55,16 +63,24 @@ const Results = () => {
         <div className={style.container}>
             <h1>{resultPrettyName(rname)}</h1>
             {sendButton ? (
-                <button
-                    className={style.send}
-                    onClick={() => {
-                        console.log(rname);
-                        sendEmail.mutate(rname);
-                        setButton(() => false);
-                    }}
-                >
-                    Send Email
-                </button>
+                <>
+                    <button
+                        className={style.send}
+                        onClick={() => {
+                            console.log(rname);
+                            sendEmail.mutate(rname);
+                            setButton(() => false);
+                        }}
+                    >
+                        Send Email
+                    </button>
+                    <button
+                        className={style.send}
+                        onClick={deleteResult.mutate}
+                    >
+                        Delete
+                    </button>
+                </>
             ) : (
                 <button
                     className={style.send}

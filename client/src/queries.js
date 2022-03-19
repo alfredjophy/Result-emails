@@ -1,6 +1,8 @@
 import { useQuery, useMutation } from "react-query";
 
-const BASE_URL = "https://resultmails.jijuamathew.in/api";
+//const BASE_URL = "https://resultmails.jijuamathew.in/api";
+
+const BASE_URL = "http://localhost:5000";
 
 async function getResult(rname) {
     const response = await fetch(`${BASE_URL}/results/${rname}`, {
@@ -112,6 +114,17 @@ async function getResultStats(rname) {
 
 export const useResultStatsQuery = (rname) =>
     useQuery(`stats-${rname}`, () => getResultStats(rname));
+
+async function deleteResult(rname) {
+    const response = await fetch(`${BASE_URL}/results/${rname}`, {
+        method: "DELETE",
+        credentials: "include",
+    });
+    const data = await response.json();
+    return data;
+}
+export const useDeleteResult = (rname, settings) =>
+    useMutation(() => deleteResult(rname), settings);
 
 async function getLoginStatus() {
     const response = await fetch(`${BASE_URL}/isLoggedIn`, {

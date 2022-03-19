@@ -115,15 +115,18 @@ def get_department_stats(dname):
 
     return jsonify({'readStats' : (stat[0]/stat[1])*100}),200
 
-@app.route('/results/<rname>')
+@app.route('/results/<rname>',methods=['GET','DELETE'])
 def getResult(rname):
     if not authorization(1):
         return jsonify({'error':'unauthenticated'}),415
-
-    result=db.get_result(rname)
-    if not result :
-        return jsonify({'error':'result not found'}),404
-    return jsonify(result),200
+    if request.method=='GET':
+        result=db.get_result(rname)
+        if not result :
+            return jsonify({'error':'result not found'}),404
+        return jsonify(result),200
+    elif request.method == 'DELETE':
+        db.delete_result(rname)
+        return jsonify({'deleted':True}),200
 
 @app.route('/results/<resultName>/emails/send',methods=['POST'])
 def sendmail(resultName):
