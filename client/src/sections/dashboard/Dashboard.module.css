@@ -1,22 +1,20 @@
-.sec{
+.sec {
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.heading{
+.heading {
     text-align: center;
     margin-top: 6rem;
 }
-.cards{
+.cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(18rem, 1fr));
     align-items: center;
     justify-items: center;
-
 }
-.card{
+.card {
     background: #043565;
     width: 18rem;
     max-width: 27rem;
@@ -29,14 +27,14 @@
     padding-left: 20px;
     border-radius: 9px;
 }
-.link{
+.link {
     text-decoration: none;
     color: black;
 }
-.sub{
+.sub {
     text-align: center;
 }
-.percent{
+.percent {
     position: absolute;
     right: 10px;
     bottom: -10px;
@@ -45,42 +43,49 @@
     padding: 3px;
     border-radius: 5px;
 }
-.card:hover{
+.card:hover {
     background: rgba(4, 53, 101, 0.8);
 }
-.print{
+.print {
     position: absolute;
     left: 90%;
     top: 10.5%;
-    height: 35px;
-    width: 50px;
-    padding: 5px;
+    height: 39px;
+    width: 70px;
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    background: rgb(4, 53, 101);
+}
+.print:hover {
+    background: rgba(4, 53, 101, 0.9);
+    color: white;
+    box-shadow: 0px 0px 5px 0px black;
 }
 
 @media (min-width: 1100px) {
-    .cards{
+    .cards {
         width: 85%;
     }
 }
 @media (max-width: 1100px) {
-    .cards{
+    .cards {
         width: 100%;
     }
 }
 @media (max-width: 968px) {
-    .cards{
+    .cards {
         grid-template-columns: repeat(2, minmax(18rem, 1fr));
         width: 100%;
     }
-    
 }
 @media (max-width: 678px) {
-    .cards{
+    .cards {
         grid-template-columns: repeat(1, minmax(15rem, 1fr));
         width: 100%;
     }
-    .card{
+    .card {
         width: 85vw;
     }
-    
 }
+

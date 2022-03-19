@@ -35,6 +35,7 @@ const getYears = () => {
 
 const UploadFile = () => {
     const departments = useDepartmentsQuery();
+    const [other, setOther] = useState([]);
     const courses = useCoursesQuery();
     const [curDep, setcurDep] = useState(0);
     const [semesters, setSemesters] = useState(null);
@@ -56,9 +57,15 @@ const UploadFile = () => {
         );
         setSemesters(courses.data[i].semesters);
 
-        setSemesters(courses.data[i].semesters);
-
-        console.log(departments.data[curDep]);
+        setOther(() => {
+            if (departments.data[curDep].other == undefined) return [];
+            else {
+                const newOther = JSON.parse(departments.data[curDep].other);
+                if (newOther[courses.data[i].course] != undefined)
+                    return newOther[courses.data[i].course];
+                else return [];
+            }
+        });
     }, [curDep]);
 
     const handleSubmit = (e) => {
@@ -111,6 +118,26 @@ const UploadFile = () => {
                                     (c, i) => c.course == e.target.value
                                 );
                                 setSemesters(courses.data[i].semesters);
+                                setOther(() => {
+                                    if (
+                                        departments.data[curDep].other ==
+                                        undefined
+                                    )
+                                        return [];
+                                    else {
+                                        const newOther = JSON.parse(
+                                            departments.data[curDep].other
+                                        );
+                                        if (
+                                            newOther[courses.data[i].course] !=
+                                            undefined
+                                        )
+                                            return newOther[
+                                                courses.data[i].course
+                                            ];
+                                        else return [];
+                                    }
+                                });
                             }}
                         >
                             {departments.data[curDep]["courses"].map((c) => (
@@ -165,17 +192,12 @@ const UploadFile = () => {
                         </select>
                     </div>
                 </div>
-                {departments.data[curDep].other != null && (
+                {other.length != 0 && (
                     <div className={style.full}>
                         <div className={style.half}>
                             <label name="other">Other</label>
                             <select name="other">
-                                {[
-                                    null,
-                                    ...JSON.parse(
-                                        departments.data[curDep].other
-                                    )[departments.data[curDep]["courses"][0]],
-                                ].map((m) => (
+                                {other.map((m) => (
                                     <option key={m} value={m}>
                                         {m}
                                     </option>

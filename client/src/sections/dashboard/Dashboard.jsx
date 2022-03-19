@@ -6,6 +6,7 @@ import {
     useDepartmentsQuery,
     useDepartmentStatsQuery,
 } from "../../queries";
+import { AiOutlinePrinter } from "react-icons/ai";
 
 const DepartmentCard = (props) => {
     const stats = useDepartmentStatsQuery(props.d.name);
@@ -45,7 +46,7 @@ const Dashboard = () => {
         <div>
             <h1 className={style.heading}>Status</h1>
             <button className={style.print} onClick={printDash}>
-                Print
+                Print <AiOutlinePrinter />
             </button>
             <section className={style.sec}>
                 <div className={style.cards}>

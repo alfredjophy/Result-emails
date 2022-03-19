@@ -1,4 +1,4 @@
-.container{
+.container {
     margin-top: 6rem;
     width: 100vw;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
 }
-.send{
+.send {
     height: 35px;
     display: flex;
     justify-content: center;
@@ -14,23 +14,35 @@
     margin-bottom: 2rem;
     padding: 10px;
     margin-left: 1rem;
+    color: white;
+    font-size: 0.9rem;
+    background: rgb(4, 53, 101);
+    border: none;
 }
-.tab{
+.send:hover {
+    background: rgba(4, 53, 101, 0.9);
+    color: white;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.tab {
     width: 90%;
     overflow-x: auto;
     text-align: center;
     border-collapse: collapse;
     border: 1px solid black;
 }
-tr,th,td{
-
+tr,
+th,
+td {
     border-collapse: collapse;
     border: 1px solid black;
     height: 35px;
 }
-.tick{
+.tick {
     color: green;
 }
-.close{
+.close {
     color: red;
 }
+

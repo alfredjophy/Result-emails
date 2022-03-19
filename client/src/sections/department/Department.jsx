@@ -29,9 +29,7 @@ const ResultPreview = (props) => {
 
     const prettyName = resultPrettyName(props.rname);
     const loc = prettyName.search(/\(/) || prettyName.search("Semester");
-    const name = resultPrettyName(props.rname)
-        .substring(loc)
-        .replace(/\(|\)/g, ""); // remove parentheses
+    const name = resultPrettyName(props.rname).substring(loc);
 
     return (
         <div className={style.res}>
@@ -39,15 +37,20 @@ const ResultPreview = (props) => {
                 {name}
             </Link>
             {stats.data.emailSent && (
-                <StatsBar
-                    total={stats.data.totalCount}
-                    truths={stats.data.read}
-                />
+                <>
+                    <StatsBar
+                        total={stats.data.totalCount}
+                        truths={stats.data.read}
+                    />
+
+                    <p className={style.h6}>
+                        {(stats.data.read / stats.data.totalCount).toPrecision(
+                            2
+                        ) * 100}
+                        %
+                    </p>
+                </>
             )}
-            <p className={style.h6}>
-                {(stats.data.read / stats.data.totalCount).toPrecision(2) * 100}
-                %
-            </p>
         </div>
     );
 };

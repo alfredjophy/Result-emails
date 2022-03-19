@@ -63,7 +63,7 @@ const Results = () => {
         <div className={style.container}>
             <h1>{resultPrettyName(rname)}</h1>
             {sendButton ? (
-                <>
+                <div style={{ display: "flex" }}>
                     <button
                         className={style.send}
                         onClick={() => {
@@ -80,7 +80,7 @@ const Results = () => {
                     >
                         Delete
                     </button>
-                </>
+                </div>
             ) : (
                 <button
                     className={style.send}
