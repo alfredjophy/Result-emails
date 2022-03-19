@@ -1,8 +1,6 @@
 import { useQuery, useMutation } from "react-query";
 
-const BASE_URL = "https://resultmails.jijuamathew.in/api";
-
-//const BASE_URL = "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 async function getResult(rname) {
     const response = await fetch(`${BASE_URL}/results/${rname}`, {

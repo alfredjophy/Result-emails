@@ -7,7 +7,7 @@ from utils.getEmailPage import getEmailPage
 
 import multiprocessing as mp
 
-CREDENTIALS = {"email" : 'alfredjophy129@gmail.com',"password" : 'wxtfhaqjaxhmgxml'};
+CREDENTIALS = {"email" : 'YOUR_EMAIL',"password" : 'YOUR_PASSWORD'};
 
 
 def _send_email(subject,records,linkIDs,exam_name):
